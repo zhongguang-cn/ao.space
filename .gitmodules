@@ -37,3 +37,6 @@
 [submodule "nginx-vod-module"]
 	path = nginx-vod-module
 	url = git@github.com:ao-space/nginx-vod-module.git
+[submodule "platform-sdk-java"]
+	path = platform-sdk-java
+	url = git@github.com:ao-space/platform-sdk-java.git
