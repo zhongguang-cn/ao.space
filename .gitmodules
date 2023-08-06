@@ -1,0 +1,39 @@
+[submodule "server/space-filepreview"]
+	path = server/space-filepreview
+	url = git@github.com:ao-space/space-filepreview.git
+[submodule "server/space-media-vod"]
+	path = server/space-media-vod
+	url = git@github.com:ao-space/space-media-vod.git
+[submodule "server/space-postgresql"]
+	path = server/space-postgresql
+	url = git@github.com:ao-space/space-postgresql.git
+[submodule "server/space-aofs"]
+	path = server/space-aofs
+	url = git@github.com:ao-space/space-aofs.git
+[submodule "server/space-web"]
+	path = server/space-web
+	url = git@github.com:ao-space/space-web.git
+[submodule "server/space-agent"]
+	path = server/space-agent
+	url = git@github.com:ao-space/space-agent.git
+[submodule "server/space-gateway"]
+	path = server/space-gateway
+	url = git@github.com:ao-space/space-gateway.git
+[submodule "client/client-android"]
+	path = client/client-android
+	url = git@github.com:ao-space/client-android.git
+[submodule "client/client-ios"]
+	path = client/client-ios
+	url = git@github.com:ao-space/client-ios.git
+[submodule "platform/platform-base"]
+	path = platform/platform-base
+	url = git@github.com:ao-space/platform-base.git
+[submodule "platform-sdk-go"]
+	path = platform-sdk-go
+	url = git@github.com:ao-space/platform-sdk-go.git
+[submodule "gt"]
+	path = gt
+	url = git@github.com:ao-space/gt.git
+[submodule "nginx-vod-module"]
+	path = nginx-vod-module
+	url = git@github.com:ao-space/nginx-vod-module.git
