@@ -28,15 +28,12 @@
 [submodule "platform/platform-base"]
 	path = platform/platform-base
 	url = git@github.com:ao-space/platform-base.git
-[submodule "platform-sdk-go"]
-	path = platform-sdk-go
+[submodule "platform/platform-sdk-go"]
+	path = platform/platform-sdk-go
 	url = git@github.com:ao-space/platform-sdk-go.git
-[submodule "gt"]
-	path = gt
-	url = git@github.com:ao-space/gt.git
-[submodule "nginx-vod-module"]
-	path = nginx-vod-module
+[submodule "server/nginx-vod-module"]
+	path = server/nginx-vod-module
 	url = git@github.com:ao-space/nginx-vod-module.git
-[submodule "platform-sdk-java"]
-	path = platform-sdk-java
+[submodule "platform/platform-sdk-java"]
+	path = platform/platform-sdk-java
 	url = git@github.com:ao-space/platform-sdk-java.git
