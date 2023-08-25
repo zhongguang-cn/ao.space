@@ -39,9 +39,13 @@ AO.space Platform（即傲空间平台），则为个人设备提供透明通信
 
 客户端部分依赖服务器部分，建议按如下顺序进行构建和部署运行：
 
-- 空间平台部分，请参考 [空间平台构建和部署](./platform/README.md)
-- 服务器部分，请参考 [服务器构建和部署](./server/README.md)
-- 客户端部分，请参考 [app 构建和运行](./client/README.md)
+- 空间平台部分，请参考 [空间平台构建和部署](./platform/README.md)  @zuling
+- 服务器部分，请参考 [服务器构建和部署](./server/README.md) @xuyang
+- 客户端部分，请参考 [app 构建和运行](./client/README.md) @fuyu @dazhou
+
+## 接口文档
+
+- 内容来源，api-doc 模块部署的 url
 
 ## 常见问题  @daqing
 
