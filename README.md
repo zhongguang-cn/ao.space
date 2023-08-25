@@ -24,8 +24,8 @@ AO.space Platform（即傲空间平台），则为个人设备提供透明通信
 
 服务器为傲空间主要数据载体，也是数据保护的核心，由如下仓库组成：
   
-- [space-agent](https://githup.com/ao-space/ao.space/server/space-agent/)：提供设备绑定、系统服务模块启动引导和管理等服务
-- [space-aofs](./server/space-aofs/)：提供文件访问服务，包括文件查询、分片上传、下载等接口
+- [space-agent](https://github.com/ao-space/space-agent)：提供设备绑定、系统服务模块启动引导和管理等服务
+- [space-aofs](https://github.com/ao-space/space-aofs)：提供文件访问服务，包括文件查询、分片上传、下载等接口
 - space-gateway：端到端的请求安全处理模块，收到请求后解密后转发给相关模块，对回应加密后响应给请求端。
 - space-filepreview：支持媒体文件的缩略图、预览图的生成
 - space-media-vod：提供流媒体播放服务
@@ -39,9 +39,9 @@ AO.space Platform（即傲空间平台），则为个人设备提供透明通信
 
 客户端部分依赖服务器部分，建议按如下顺序进行构建和部署运行：
 
-- 空间平台部分，请参考[空间平台构建和部署](./platform/README.md)
-- 服务器部分，请参考[服务器构建和部署](./server/README.md)
-- 客户端部分，请参考[app 构建和运行](./client/README.md)
+- 空间平台部分，请参考 [空间平台构建和部署](./platform/README.md)
+- 服务器部分，请参考 [服务器构建和部署](./server/README.md)
+- 客户端部分，请参考 [app 构建和运行](./client/README.md)
 
 ## 常见问题  @daqing
 
