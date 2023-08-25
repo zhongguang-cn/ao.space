@@ -63,4 +63,6 @@ AO.space is open-sourced under Apache License 2.0, see [LICENSE](xxx).
 
 ## 致谢
 
+我们的项目，离不开前辈们的开源成果，在此特别感谢 [Redis](xx), [Postgres](xxx), [Mysql](xxx) 等。
+
 最后，感谢您对本项目的贡献。我们欢迎各种形式的贡献，包括但不限于代码贡献、问题报告、功能请求、文档编写等。我们相信在您的帮助下，本项目会变得更加完善和强大。
