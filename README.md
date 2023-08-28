@@ -1,62 +1,49 @@
-# 项目概述
+# ao.space
 
-AO.space（傲空间）是一个以保护个人数据安全和隐私为核心的解决方案。通过端对端加密、基于设备认证等技术，确保用户完全掌控个人账号和数据。同时，采用平台透明转发、点对点加速、局域网直连等技术，让用户随时随地的极速访问个人数据。傲空间利用 PWA（Progressive Web App）和云原生技术，设计并打造前后端一体的应用生态。
+Englis | [简体中文](./README_CN.md)
 
-AO.space（傲空间）由服务端、客户端、平台三个部分组成。服务端和客户端只运行在个人设备上，使用公钥认证建立加密通信通道。服务端是傲空间管理保护用户数据的核心部分，目前支持 x86_64 和 aarch64 两个架构，可运行在个人服务器、个人计算机等设备上。客户端让用户在不同平台上快速安全的访问个人数据，目前支持多个平台，包括 Android、iOS 和 Web ，方便用户随时随地使用。
+AO.space is a solution that focuses on protecting personal data security and privacy. Utilizing end-to-end encryption and device-based authentication, users have complete control over their personal accounts and data. AO.space also employs various technologies, including transparent platform forwarding, peer-to-peer acceleration, and LAN direct connection, to enable fast access to personal data from anywhere at any time. Leveraging Progressive Web App and cloud-native technology, AO.space has developed an integrated application ecosystem that could include both front-end and back-end components.
 
-## 系统整体架构
+AO.space is composed of three parts: server-side, client-side, and platform. The server-side and client-side run on personal devices and establish encrypted communication channels with public key authentication. The server-side supports x86_64 and aarch64 architectures and can run on personal servers, computers, or other similar devices. The client-side supports Android, iOS, and web platforms, providing users with the convenience of using AO.space anywhere and anytime.
+
+## Architecture @haibo
 
 - 系统架构介绍，以及主要工作方式。
 
-更多设计内容，请访问 [blog](https://ao.space/blog)。
+更多内容，请访问 [官网](https://ao.space/blog)。
 
-## 目录 @zhongguang
+## Source code repository introduction
 
-- 数据来源，以下章节内容囧
+The overall project includes ：
 
-## 仓库介绍
+- [./platform](./platform/)
+- [./server](./server/)
+- [./client](./client/) 。
 
-我们项目的模块分三大类： 空间平台 [platform](./platform/)、服务端 [server](./server/) 和客户端 [client](./client/) 。
-
-### 空间平台仓库介绍  @zuling
+### Platform repository introduction  @zuling
 
 - 空间平台各模块介绍，包括模块名称，仓库地址，及主要功能
 
-### 服务端仓库介绍 @zhongguang
+### Server repository introduction @zhongguang
 
-服务器为傲空间主要数据载体，也是数据保护的核心，由如下仓库组成：
+The server is the main data carrier of AO.space and is also the core of data protection. It consists of the following repositories:
   
-- [space-agent](https://github.com/ao-space/space-agent)：提供设备绑定、系统服务模块启动引导和管理等服务
-- [space-aofs](https://github.com/ao-space/space-aofs)：提供文件访问服务，包括文件查询、分片上传、下载等接口
-- space-gateway：端到端的请求安全处理模块，收到请求后解密后转发给相关模块，对回应加密后响应给请求端。
-- space-filepreview：支持媒体文件的缩略图、预览图的生成
-- space-media-vod：提供流媒体播放服务
-- space-web：提供 web 端的服务资源及请求的 nginx 反向代理服务
+- [space-agent](https://github.com/ao-space/space-agent)：It provides services such as device binding, system service module startup bootstrapping, and management.
+- [space-aofs](https://github.com/ao-space/space-aofs)：It provides file access services, including interfaces for file querying, chunked uploading, downloading, and more.
+- [space-gateway](https://github.com/ao-space/space-gateway)：The end-to-end request security processing module receives requests, decrypts them, and forwards them to the relevant modules. It encrypts the responses and sends them back to the requesting client.
+- [space-filepreview](https://github.com/ao-space/space-filepreview)：It supports the generation of thumbnails and preview images for media files. This functionality allows users to generate smaller versions or preview images of their media files, which can be useful for displaying file previews or creating thumbnails for faster loading.
+- [space-media-vod](https://github.com/ao-space/space-media-vod)：Provide streaming media data access services
+- [space-web](https://github.com/ao-space/space-web)：Providing an Nginx reverse proxy service for serving web-based service resources and requests
 
-### 客户端仓库介绍 @fuyu
+### Clients repository introduction @fuyu
 
 - 客户端各模块介绍，包括模块名称，仓库地址，及主要功能
 
-## 构建和运行
+## Build and deploy
 
-### 源码下载
+To deploy and run the project from a release version, or to build and run it from the source code, please refer to [build-and-deploy](./docs/build-and-deploy.md).
 
-请执行以下命令进行整个项目的源码下载:
-
-- `git submodule init`
-- `git submodule update`
-
-也可以用 git 命令进行单个仓库的源码下载。
-
-### 构建
-
-空间平台部分可以使用官方空间平台，因此这部分可以按需构建部署；客户端部分依赖服务器部分，建议按如下顺序进行构建和部署运行：
-
-- 空间平台部分，请参考 [空间平台构建和部署](./platform/README.md)  @zuling
-- 服务器部分，请参考 [服务器构建和部署](./server/README.md) @xuyang
-- 客户端部分，请参考 [app 构建和运行](./client/README.md) @fuyu @dazhou
-
-## 接口文档
+## 文档
 
 - 跳转 api-doc 模块部署的 url
 
@@ -73,9 +60,10 @@ AO.space（傲空间）由服务端、客户端、平台三个部分组成。服
 ## License
 
 AO.space is open-sourced under Apache License 2.0, see [LICENSE](xxx).
+非 2.0 的列出来。
 
 ## 致谢
 
-我们的项目，离不开前人的开源成果，在此特别感谢 [Redis](xx)、[Postgres](xxx)、 [Mysql](xxx)、[OpenResty](xxx) 等。
+AO.space heavily relies on the open-source achievements of other projects. We would like to express our special thanks to them: [Redis](xx)、[Postgres](xxx)、 [Mysql](xxx)、[OpenResty](xxx) and so on。
 
-最后，感谢您对本项目的贡献。我们欢迎各种形式的贡献，包括但不限于代码贡献、问题报告、功能请求、文档编写等。我们相信在您的帮助下，本项目会变得更加完善和强大。
+Finally, thank you for your contribution to this project. We welcome contributions in all forms, including but not limited to code contributions, issue reports, feature requests, documentation writing, etc. We believe that with your help, this project will become more perfect and stronger.
