@@ -37,7 +37,10 @@ The server is the main data carrier of AO.space and is also the core of data pro
 
 ### Clients repository introduction @fuyu
 
-- 客户端各模块介绍，包括模块名称，仓库地址，及主要功能
+客户端为傲空间的交互入口，让用户可在不同平台上快速安全的访问个人数据，由如下仓库组成：
+
+- [client-android](https://github.com/ao-space/client-android)：Android平台客户端
+- [client-ios](https://github.com/ao-space/client-ios)：iOS平台客户端
 
 ## Build and deploy
 
