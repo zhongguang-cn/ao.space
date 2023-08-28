@@ -47,7 +47,7 @@ AO.space Platform（即傲空间平台），则为个人设备提供透明通信
 
 ## 接口文档
 
-- 内容来源，api-doc 模块部署的 url
+- 跳转 api-doc 模块部署的 url
 
 ## 常见问题  @daqing
 
