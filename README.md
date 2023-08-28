@@ -10,6 +10,8 @@ AO.space Platform（即傲空间平台），则为个人设备提供透明通信
 
 - 系统架构介绍，以及主要工作方式。
 
+更多设计内容，请访问 [blog](https://ao.space/blog)。
+
 ## 目录 @zhongguang
 
 - 数据来源，以下章节内容囧
