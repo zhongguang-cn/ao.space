@@ -46,7 +46,7 @@ The server is the main data carrier of AO.space and is also the core of data pro
 
 To deploy and run the project from a release version, or to build and run it from the source code, please refer to [build-and-deploy](./docs/build-and-deploy.md).
 
-## 文档
+## Document
 
 - 跳转 api-doc 模块部署的 url
 
