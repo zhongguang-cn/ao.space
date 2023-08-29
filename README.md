@@ -52,13 +52,20 @@ To deploy and run the project from a release version, or to build and run it fro
 
 ## 常见问题  @daqing
 
-## 联系我们及协作贡献方式  @daqing
+## 贡献指南 
 
-### 讨论组入口
+我们非常欢迎对本项目进行贡献。以下是一些指导原则和建议，希望能够帮助您参与到项目中来。
 
-### 提交问题的方式
+[贡献指南](./docs/contribution-guidelines_CN.md)
 
-### 提交代码的方式
+## 联系我们
+
+- [傲空间官网](https://ao.space)
+- [讨论组](https://slack.ao.space)
+- [Twitter](https://twitter.com/AOspaceOSC)
+- [Medium](https://twitter.com/AOspaceOSC)
+
+### 讨论组+社交账号入口
 
 ## License
 
