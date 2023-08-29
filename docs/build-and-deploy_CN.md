@@ -44,16 +44,6 @@ docker镜像构建方式基本一样，都是用Dockerfile来构建镜像
 例如这里用的 *local/space-aofs:{tag}* 
 
 ```shell
-# 下载源码
-
-git clone git@github.com:ao-space/space-aofs.git
-git clone git@github.com:ao-space/space-gateway.git
-git clone git@github.com:ao-space/space-web.git
-git clone git@github.com:ao-space/space-filepreview.git
-git clone git@github.com:ao-space/space-media-vod.git
-git clone git@github.com:ao-space/space-postgresql.git
-git clone git@github.com:ao-space/space-agent.git
-
 #构建镜像
 
 cd space-aofs ; docker build -t local/space-aofs:{tag} .
@@ -65,6 +55,8 @@ cd space-postgresql;docker build -t local/space-postgresql:{tag} .
 cd space-agent ; docker build -t local/space-agent:{tag} .
 
 ```
+
+可以通过 `docker images` 查看自己是否构建成功
 #### 服务端部署
 
 全部构建完成后，您可以开始部署自己的傲空间
@@ -88,6 +80,7 @@ cd space-agent ; docker build -t local/space-agent:{tag} .
         -e RUN_NETWORK_MODE="host"  \
         local/space-agent:{tag}
 ```
+你需要将{tag} 修改为自己本地构建的镜像tag
 
 - Windows
 
@@ -103,6 +96,7 @@ docker run -d --name aospace-all-in-one `
 -e AOSPACE_DATADIR=/run/desktop/mnt/host/c/aospace `
 local/space-agent:{tag}
 ```
+你需要将{tag} 修改为自己本地构建的镜像tag
 
 - MacOS
 
@@ -120,6 +114,7 @@ docker run -d --name aospace-all-in-one  \
 -e AOSPACE_DATADIR=$DATADIR  \
 local/space-agent:{tag}
 ```
+你需要将{tag} 修改为自己本地构建的镜像tag
 
 ### 客户端构建和运行  @fuyu
 
@@ -130,5 +125,66 @@ Android 和 iOS 分开写
 ### Platform download and deploy @zuling
 
 ### Server download and deploy @xuyang
+
+你可以在[这里]()找到我们最新发布的版本
+
+如果你想要安装最新版本的傲空间
+
+#### 环境准备
+
+- docker (>=18.09) 
+
+#### 安装部署
+
+- Linux
+
+```shell
+        sudo docker network create ao-space;
+        sudo docker run -d --name aospace-all-in-one  \
+        --restart always  \
+        --network=ao-space  \
+        --publish 5678:5678  \
+        --publish 127.0.0.1:5680:5680  \
+        -v $AOSPACE_HOME_DIR:/aospace  \
+        -v /var/run/docker.sock:/var/run/docker.sock:ro  \
+        -e AOSPACE_DATADIR=$AOSPACE_HOME_DIR \
+        -e RUN_NETWORK_MODE="host"  \
+        ghcr.io/ao-space/space-agent:dev
+```
+你需要将{tag} 修改为自己本地构建的镜像tag
+
+- Windows
+
+```shell
+docker network create ao-space
+docker run -d --name aospace-all-in-one `
+--restart always `
+--network=ao-space `
+--publish 5678:5678 `
+--publish 127.0.0.1:5680:5680 `
+-v c:/aospace:/aospace ` # you can change c:/ to your own disk ,like d:/
+-v //var/run/docker.sock:/var/run/docker.sock:ro `
+-e AOSPACE_DATADIR=/run/desktop/mnt/host/c/aospace `
+ghcr.io/ao-space/space-agent:dev
+```
+
+- MacOS
+
+```zsh
+docker network create ao-space
+HOME="/Users/User-Name-Here" # you can change User-Name-Here to your own name
+DATADIR="$HOME/aospace"
+docker run -d --name aospace-all-in-one  \
+--restart always  \
+--network=ao-space  \
+--publish 5678:5678  \
+--publish 127.0.0.1:5680:5680  \
+-v $DATADIR:/aospace  \
+-v /var/run/docker.sock.raw:/var/run/docker.sock:ro  \
+-e AOSPACE_DATADIR=$DATADIR  \
+ghcr.io/ao-space/space-agent:dev
+```
+
+更多部署文档请参考[官网](https://ao.space/open/documentation/105001)
 
 ### Clients download and run  @fuyu
