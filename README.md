@@ -63,9 +63,7 @@ To deploy and run the project from a release version, or to build and run it fro
 - [傲空间官网](https://ao.space)
 - [讨论组](https://slack.ao.space)
 - [Twitter](https://twitter.com/AOspaceOSC)
-- [Medium](https://twitter.com/AOspaceOSC)
-
-### 讨论组+社交账号入口
+- [Medium](https://medium.com/@aospacecommunity)
 
 ## License
 
