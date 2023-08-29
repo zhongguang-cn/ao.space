@@ -50,8 +50,6 @@ To deploy and run the project from a release version, or to build and run it fro
 
 - 跳转 api-doc 模块部署的 url
 
-## 常见问题  @daqing
-
 ## 贡献指南 
 
 我们非常欢迎对本项目进行贡献。以下是一些指导原则和建议，希望能够帮助您参与到项目中来。
