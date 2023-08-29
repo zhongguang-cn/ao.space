@@ -50,16 +50,16 @@ To deploy and run the project from a release version, or to build and run it fro
 
 - 跳转 api-doc 模块部署的 url
 
-## 贡献指南 
+## Contribution Guidelines
 
-我们非常欢迎对本项目进行贡献。以下是一些指导原则和建议，希望能够帮助您参与到项目中来。
+Contributions to this project are very welcome. Here are some guidelines and suggestions to help you get involved in the project.
 
-[贡献指南](./docs/contribution-guidelines_CN.md)
+[Contribution Guidelines](./docs/contribution-guidelines.md)
 
-## 联系我们
+## Contact us
 
-- [傲空间官网](https://ao.space)
-- [讨论组](https://slack.ao.space)
+- [Official website](https://ao.space)
+- [Discussion group](https://slack.ao.space)
 - [Twitter](https://twitter.com/AOspaceOSC)
 - [Medium](https://medium.com/@aospacecommunity)
 
