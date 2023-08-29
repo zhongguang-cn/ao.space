@@ -63,6 +63,8 @@ Contributions to this project are very welcome. Here are some guidelines and sug
 - [Twitter](https://twitter.com/AOspaceOSC)
 - [Medium](https://medium.com/@aospacecommunity)
 
+You can also [get support for AO.spcae!](https://ao.space/en/support/help)
+
 ## License
 
 AO.space is open-sourced under Apache License 2.0, see [LICENSE](xxx).
