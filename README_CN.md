@@ -47,15 +47,18 @@ AO.space（傲空间）由服务端、客户端、平台三个部分组成。服
 
 - 跳转 api-doc 模块部署的 url
 
-## 常见问题  @daqing
+## 贡献指南 
 
-## 联系我们及协作贡献方式  @daqing
+我们非常欢迎对本项目进行贡献。以下是一些指导原则和建议，希望能够帮助您参与到项目中来。
 
-### 讨论组入口
+[贡献指南](./docs/contribution-guidelines_CN.md)
 
-### 提交问题的方式
+## 联系我们
 
-### 提交代码的方式
+- [傲空间官网](https://ao.space)
+- [讨论组](https://slack.ao.space)
+- [Twitter](https://twitter.com/AOspaceOSC)
+- [Medium](https://medium.com/@aospacecommunity)
 
 ## License
 
