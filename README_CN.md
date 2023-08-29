@@ -35,9 +35,13 @@ AO.space（傲空间）由服务端、客户端、平台三个部分组成。服
 - [space-media-vod](https://github.com/ao-space/space-media-vod)：提供流媒体播放服务
 - [space-web](https://github.com/ao-space/space-web)：提供 web 端的服务资源及请求的 nginx 反向代理服务
 
-### 客户端（client)仓库介绍 @fuyu
+### 客户端（client）仓库介绍 @fuyu
 
-- 客户端各模块介绍，包括模块名称，仓库地址，及主要功能
+客户端支持Android、iOS、web版本，由如下仓库组成：
+
+- [client-android](https://github.com/ao-space/client-android)：提供 Android 端的傲空间客户端
+- [client-ios](https://github.com/ao-space/client-ios)：提供 iOS 端的傲空间客户端
+- [space-web](https://github.com/ao-space/space-web)：部署在 server 上，提供 web 端的傲空间客户端
 
 ## 构建和部署
 

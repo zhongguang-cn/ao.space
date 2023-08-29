@@ -118,7 +118,42 @@ local/space-agent:{tag}
 
 ### 客户端构建和运行  @fuyu
 
-Android 和 iOS 分开写
+#### Android
+
+环境准备：
+
+- 安装 Java 开发工具包 (JDK)，配置 JAVA_HOME 环境变量
+- 下载并安装 Android Studio 开发工具，在安装过程中，选择安装 Android SDK 和其他必要的组件
+- 创建 Android 虚拟设备（AVD），或使用Android系统手机，打开开发者选项，连接开发设备
+
+源码下载：
+
+可以使用[项目整体下载](xxx)下载的方式，也可以通过通过一下命令下载本模块的仓库：
+
+- `git clone git@github.com:ao-space/space-aofs.git ./client-android`
+
+部署：
+
+使用 Android Studio 导入 client-android 项目。可在点击 `Run app` 直接在虚拟设备/真机上运行、调试项目。也可通过点击 `Build - Generate Signed Bundle or APK` ，选择 APK ， 使用自己创建的密钥库文件进行签名打包，以安装包的形式安装到Android系统手机上。
+
+#### iOS
+
+获取源码：
+
+可以通过 clone 命令方式
+
+``` 
+git clone https://github.com/ao-space/client-ios.git
+ ```
+
+ 或者直接下载的方式获取。  
+
+安装依赖库：
+
+傲空间源码中使用了一些第三方开源库代码，在运行项目工程前需要先安装依赖的库。具体方式为：打开 Mac 上终端应用程序，进入源码文件所在目录（Podfile 文件所在目录），执行 `Pod install` 命令，安装项目所依赖的第三方开源库。  
+
+运行：
+用 Xcode 打开工程文件 EulixSpace.xcworkspace 后 Run 项目。APP 使用到摄像头，可以在 iPhone 设备上运行，或者通过模拟器 My Mac(Designed for iPhone) 来运行程序。
 
 ## Release 版本下载和部署
 

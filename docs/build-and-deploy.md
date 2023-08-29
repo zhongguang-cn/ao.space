@@ -108,7 +108,46 @@ local/space-agent:{tag}  # you can change {tag} to your own build tag
 you need to change {tag} to your own build tag
 
 ### Clients build and run  @fuyu
-<!-- 包括环境准备、构建和部署 !-->
+
+#### Android
+
+Environment
+
+- Install Java Development Kit (JDK) and configure the JAVA_HOME environment variable.
+
+- Download and install Android Studio development tool. During the installation process, choose to install Android SDK and other necessary components.
+
+- Create an Android Virtual Device (AVD), or use an Android phone. Open the Developer Options and connect the development device.
+
+Source code download
+
+You can download the project as a whole through [xxx], or download this module's repository using the following command:
+
+- `git clone git@github.com:ao-space/space-aofs.git ./client-android`
+
+Deploy
+
+Import the client-android project into Android Studio. Click "Run app" to directly run and debug the project on a virtual device/real device. Alternatively, click "Build - Generate Signed Bundle or APK", choose APK, and sign and package it with your own keystore file to install it as an APK on an Android phone.
+
+#### iOS
+
+Get the source code
+
+You can use the clone command
+
+  ```
+  git clone https://github.com/ao-space/client-ios.git
+  ```
+
+  Or get it directly by downloading.
+
+Install dependent libraries
+
+Some third-party open source library codes are used in the Aospace source code, and the dependent libraries need to be installed before running the project. The specific method is: open the terminal application on the Mac, enter the directory where the source code file is located (the directory where the Podfile file is located), execute the `Pod install` command, and install the third-party open source library that the project depends on.
+
+Run Application
+
+Open the project file EulixSpace.xcworkspace with Xcode and run the project. The APP uses the camera and can run on the iPhone device, or through the emulator My Mac (Designed for iPhone) to run the program.
 
 ## Release download and deply
 
