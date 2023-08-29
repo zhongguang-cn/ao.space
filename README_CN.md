@@ -60,6 +60,8 @@ AO.space（傲空间）由服务端、客户端、平台三个部分组成。服
 - [Twitter](https://twitter.com/AOspaceOSC)
 - [Medium](https://medium.com/@aospacecommunity)
 
+您也可以查看傲空间提供的[帮助中心](https://ao.space/support/help)
+
 ## License
 
 AO.space is open-sourced under Apache License 2.0, see [LICENSE](xxx).
