@@ -17,13 +17,13 @@ Please execute the following command to download the entire source code of the p
 <!-- 包括环境准备、构建和部署 !-->
 
 ### Server build and deploy @xuyang
-#### 环境准备
+#### Prepare Environment
 
 - docker (>=18.09)
 - git
 - golang 1.18 +
 
-#### 服务端构建
+#### Server build
 
 Docker images are built in basically the same way, using a Dockerfile to build the image.
 
@@ -50,7 +50,7 @@ cd space-postgresql;docker build -t local/space-postgresql:{tag} .
 cd space-agent ; docker build -t local/space-agent:{tag} .
 
 ```
-#### 服务端部署
+#### server deploy
 
 Once all the builds are complete, you can start deploying your own AOspace
 
