@@ -48,7 +48,7 @@ To deploy and run the project from a release version, or to build and run it fro
 
 ## Document
 
-- 跳转 api-doc 模块部署的 url
+- [API](https://github.com/ao-space/api-doc)
 
 ## Contribution Guidelines
 
@@ -58,10 +58,10 @@ Contributions to this project are very welcome. Here are some guidelines and sug
 
 ## Contact us
 
-- [Official website](https://ao.space)
+- Email: developer@ao.space
+- [Website](https://ao.space)
 - [Discussion group](https://slack.ao.space)
 - [Twitter](https://twitter.com/AOspaceOSC)
-- [Medium](https://medium.com/@aospacecommunity)
 
 You can also [get support for AO.spcae!](https://ao.space/en/support/help)
 
