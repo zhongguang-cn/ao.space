@@ -20,9 +20,13 @@ The overall project includes ：
 - [./server](./server/)
 - [./client](./client/) 。
 
-### Platform repository introduction  @zuling
+### Platform repository introduction
 
-- 空间平台各模块介绍，包括模块名称，仓库地址，及主要功能
+The responsibility of AO.space Platform is to establish a transparent communication channel for personal equipment. It consists of the following repositories:
+
+- [platform-proxy](https://github.com/ao-space/platform-proxy)：provide high-availability forwarding and horizontal expansion support for the requests from clients.
+- [platform-base](https://github.com/ao-space/platform-base)：provide the registration service of AO.space, and coordinate and manage the platform network resources.
+- [gt](https://github.com/ao-space/gt)：provides network support services that penetrate NAT access AO.space through relay forwarding.
 
 ### Server repository introduction @zhongguang
 
