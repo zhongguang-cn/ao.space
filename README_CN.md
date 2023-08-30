@@ -45,7 +45,7 @@ AO.space（傲空间）由服务端、客户端、平台三个部分组成。服
 
 ## 文档
 
-- 跳转 api-doc 模块部署的 url
+[API](https://github.com/ao-space/api-doc)
 
 ## 贡献指南 
 
@@ -55,10 +55,10 @@ AO.space（傲空间）由服务端、客户端、平台三个部分组成。服
 
 ## 联系我们
 
+- 邮箱：developer@ao.space
 - [傲空间官网](https://ao.space)
 - [讨论组](https://slack.ao.space)
 - [Twitter](https://twitter.com/AOspaceOSC)
-- [Medium](https://medium.com/@aospacecommunity)
 
 您也可以查看傲空间提供的[帮助中心](https://ao.space/support/help)
 
