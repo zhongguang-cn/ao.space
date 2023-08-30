@@ -45,7 +45,7 @@ AO.space（傲空间）由服务端、客户端、平台三个部分组成。服
 
 ## 文档
 
-[API](https://github.com/ao-space/api-doc)
+[API 文档](https://github.com/ao-space/api-doc)
 
 ## 贡献指南 
 
