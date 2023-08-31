@@ -13,13 +13,13 @@
 
 ## 构建和部署
 
-### 空间平台构建和部署 @zuling
+### 平台构建和部署
 
-#### 环境准备
+我们在 [platform-deploy仓库](https://github.com/ao-space/platform-deploy) 中详细介绍了平台的构建和部署过程。
 
-#### 构建
+需要提醒的是上述过程使用了 platform-deploy 仓库中的 docker-compose.yml 文件来编排相关组件的容器部署，其所使用的镜像为 github 镜像仓库中 dev 分支的最新镜像。
 
-#### 部署
+如果您希望用本地自己构建的镜像来替换部分组件，可将相关组件的 image 项修改为您自己编译的镜像地址，并执行 `docker-compose up -d` 命令即可。
 
 ### 服务端构建和部署 @xuyang
 
@@ -157,7 +157,9 @@ git clone https://github.com/ao-space/client-ios.git
 
 ## Release 版本下载和部署
 
-### Platform download and deploy @zuling
+### Platform download and deploy
+
+你可以在 [这里](https://ao.space/download/platform) 找到我们最新发布的版本，解压缩后，按照 README.md 文档进行部署。
 
 ### Server download and deploy @xuyang
 

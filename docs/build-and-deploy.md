@@ -13,8 +13,13 @@ Please execute the following command to download the entire source code of the p
 
 ## Build and deploy
 
-### Platform build and deploy @zuling
-<!-- 包括环境准备、构建和部署 !-->
+### Platform build and deploy
+
+In the [platform-deploy depository](https://github.com/ao-space/platform-deploy), we provided a detailed introduction to the construction and deployment process of the platform.
+
+It should be noted that the above process used the docker-compose.yml file in the platform-deploy repository to orchestrate the container deployment of related components. The image used is the latest image of the dev branch in the github image repository.
+
+If you want to replace some component images with locally built images, you can modify the image entry of the relevant components to the image address compiled by yourself and execute the `docker-compose up -d` command.
 
 ### Server build and deploy @xuyang
 #### Prepare Environment
@@ -151,7 +156,9 @@ Open the project file EulixSpace.xcworkspace with Xcode and run the project. The
 
 ## Release download and deply
 
-### Platform download and deploy @zuling
+### Platform download and deploy
+
+You can find our latest released version at [here](https://ao.space/download/platform), extract it, and deploy it according to the README.md document.
 
 ### Server download and deploy @xuyang
 
