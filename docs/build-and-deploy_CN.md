@@ -130,7 +130,7 @@ local/space-agent:{tag}
 
 可以使用[项目整体下载](xxx)下载的方式，也可以通过通过一下命令下载本模块的仓库：
 
-- `git clone git@github.com:ao-space/space-aofs.git ./client-android`
+- `git clone git@github.com:ao-space/client-android`
 
 部署：
 
