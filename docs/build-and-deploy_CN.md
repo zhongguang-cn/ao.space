@@ -6,10 +6,9 @@
 
 请按顺序执行一下命令，下载整个项目源码:
 
-- 创建本地目录， 执行命令: `mkdir ao.space`
-- 进入项目目录，执行命令: `cd ao.space`
-- 初始化，执行命令: `git submodule init`
-- 下载源码，执行命令: `git submodule update`
+- 创建本地目录， 执行命令: `mkdir ./ao.space`
+- 进入项目目录，执行命令: `cd ./ao.space`
+- 下载源码，执行命令: `git clone --recurse-submodules git@github.com:ao-space/ao.space.git .`
 
 ## 构建和部署
 
@@ -35,13 +34,13 @@ docker镜像构建方式基本一样，都是用Dockerfile来构建镜像
 
 构建之前，我想提醒您，如果您希望用本地自己构建的镜像来运行傲空间
 
-建议您先构建除了 space-agent 之外的其他镜像，最后再构建space-agent 
+建议您先构建除了 space-agent 之外的其他镜像，最后再构建space-agent
 
 在构建 aospace-agent 之前， 需要将 space-agent/res/docker-compose_run_as_docker.yml （win/Mac）
 
 或者 space-agent/res/docker-compose_run_as_docker_network_mode_host.yml （linux） 中的相关 image 项修改为您自己编译的镜像地址
 
-例如这里用的 *local/space-aofs:{tag}* 
+例如这里用的 *local/space-aofs:{tag}*
 
 ```shell
 #构建镜像
@@ -57,6 +56,7 @@ cd space-agent ; docker build -t local/space-agent:{tag} .
 ```
 
 可以通过 `docker images` 查看自己是否构建成功
+
 #### 服务端部署
 
 全部构建完成后，您可以开始部署自己的傲空间
@@ -80,6 +80,7 @@ cd space-agent ; docker build -t local/space-agent:{tag} .
         -e RUN_NETWORK_MODE="host"  \
         local/space-agent:{tag}
 ```
+
 你需要将{tag} 修改为自己本地构建的镜像tag
 
 - Windows
@@ -96,6 +97,7 @@ docker run -d --name aospace-all-in-one `
 -e AOSPACE_DATADIR=/run/desktop/mnt/host/c/aospace `
 local/space-agent:{tag}
 ```
+
 你需要将{tag} 修改为自己本地构建的镜像tag
 
 - MacOS
@@ -114,6 +116,7 @@ docker run -d --name aospace-all-in-one  \
 -e AOSPACE_DATADIR=$DATADIR  \
 local/space-agent:{tag}
 ```
+
 你需要将{tag} 修改为自己本地构建的镜像tag
 
 ### 客户端构建和运行  @fuyu
@@ -142,7 +145,7 @@ local/space-agent:{tag}
 
 可以通过 clone 命令方式
 
-``` 
+```
 git clone https://github.com/ao-space/client-ios.git
  ```
 
@@ -169,7 +172,7 @@ git clone https://github.com/ao-space/client-ios.git
 
 #### 环境准备
 
-- docker (>=18.09) 
+- docker (>=18.09)
 
 #### 安装部署
 
@@ -188,6 +191,7 @@ git clone https://github.com/ao-space/client-ios.git
         -e RUN_NETWORK_MODE="host"  \
         ghcr.io/ao-space/space-agent:dev
 ```
+
 你需要将{tag} 修改为自己本地构建的镜像tag
 
 - Windows
