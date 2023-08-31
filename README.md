@@ -41,10 +41,11 @@ The server is the main data carrier of AO.space and is also the core of data pro
 
 ### Clients repository introduction @fuyu
 
-客户端为傲空间的交互入口，让用户可在不同平台上快速安全的访问个人数据，由如下仓库组成：
+The client supports Android, iOS, and web versions, and consists of the following repositories:
 
-- [client-android](https://github.com/ao-space/client-android)：Android平台客户端
-- [client-ios](https://github.com/ao-space/client-ios)：iOS平台客户端
+- [client-android](https://github.com/ao-space/client-android)：Provide a client on Android platform for AO.space.
+- [client-ios](https://github.com/ao-space/client-ios)：Provide a client on iOS platform for AO.space.
+- [space-web](https://github.com/ao-space/space-web)：Deployed on the server, providing a web-based client for AO.space.
 
 ## Build and deploy
 
