@@ -21,6 +21,7 @@ It should be noted that the above process used the docker-compose.yml file in th
 If you want to replace some component images with locally built images, you can modify the image entry of the relevant components to the image address compiled by yourself and execute the `docker-compose up -d` command.
 
 ### Server build and deploy @xuyang
+
 #### Prepare Environment
 
 - docker (>=18.09)
@@ -54,6 +55,7 @@ cd space-postgresql;docker build -t local/space-postgresql:{tag} .
 cd space-agent ; docker build -t local/space-agent:{tag} .
 
 ```
+
 #### server deploy
 
 Once all the builds are complete, you can start deploying your own AOspace
@@ -77,7 +79,9 @@ Use the following command to deploy and run
         -e RUN_NETWORK_MODE="host"  \
         local/space-agent:{tag}
 ```
+
 you need to change {tag} to your own build tag
+
 - Windows
 
 ```shell
@@ -92,7 +96,9 @@ docker run -d --name aospace-all-in-one `
 -e AOSPACE_DATADIR=/run/desktop/mnt/host/c/aospace `
 local/space-agent:{tag} 
 ```
+
 you need to change {tag} to your own build tag
+
 - MacOS
 
 ```bash
@@ -109,6 +115,7 @@ docker run -d --name aospace-all-in-one  \
 -e AOSPACE_DATADIR=$DATADIR  \
 local/space-agent:{tag}  # you can change {tag} to your own build tag
 ```
+
 you need to change {tag} to your own build tag
 
 ### Clients build and run  @fuyu
