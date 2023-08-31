@@ -38,7 +38,7 @@ The server is the main data carrier of AO.space and is also the core of data pro
 - [space-filepreview](https://github.com/ao-space/space-filepreview)：It supports the generation of thumbnails and preview images for media files. This functionality allows users to generate smaller versions or preview images of their media files, which can be useful for displaying file previews or creating thumbnails for faster loading.
 - [space-media-vod](https://github.com/ao-space/space-media-vod)：Provide streaming media data access services
 - [space-web](https://github.com/ao-space/space-web)：Providing an Nginx reverse proxy service for serving web-based service resources and requests
-- - [space-upgrade](https://github.com/ao-space/space-upgrade)：On-demand startup, mainly responsible for server-side upgrades
+- [space-upgrade](https://github.com/ao-space/space-upgrade)：On-demand startup, mainly responsible for server-side upgrades
 
 ### Clients repository introduction @fuyu
 
