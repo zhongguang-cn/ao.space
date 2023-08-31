@@ -8,8 +8,7 @@ Please execute the following command to download the entire source code of the p
 
 - Create a local directory, run cmd: `mkdir ao.space`
 - Enter the folder/directory, run cmd: `cd ao.space`
-- Init submodule, run cmd: `git submodule init`
-- Download source code, run cmd: `git submodule update`
+- Download source code, run cmd: `git clone --recurse-submodules git@github.com:ao-space/ao.space.git .`
 
 ## Build and deploy
 
