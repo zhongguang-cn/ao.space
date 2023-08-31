@@ -34,3 +34,12 @@
 [submodule "platform/platform-proxy"]
 	path = platform/platform-proxy
 	url = git@github.com:ao-space/platform-proxy.git
+[submodule "platform/platform-nginx"]
+	path = platform/platform-nginx
+	url = git@github.com:ao-space/platform-nginx.git
+[submodule "platform/platform-deploy"]
+	path = platform/platform-deploy
+	url = git@github.com:ao-space/platform-deploy.git
+[submodule "space/space-upgrade"]
+	path = space/space-upgrade
+	url = git@github.com:ao-space/space-upgrade.git
