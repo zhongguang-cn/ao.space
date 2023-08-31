@@ -72,8 +72,8 @@ You can also [get support for AO.spcae!](https://ao.space/en/support/help)
 
 ## License
 
-AO.space is open-sourced under Apache License 2.0, see [LICENSE](xxx).
-非 2.0 的列出来。
+AO.space is open-sourced under Apache License 2.0, see [LICENSE](./LICENSE).
+<!-- 非 2.0 的列出来。 -->
 
 ## Acknowledgments
 
