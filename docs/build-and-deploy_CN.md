@@ -6,10 +6,9 @@
 
 请按顺序执行一下命令，下载整个项目源码:
 
-- 创建本地目录， 执行命令: `mkdir ao.space`
-- 进入项目目录，执行命令: `cd ao.space`
-- 初始化，执行命令: `git submodule init`
-- 下载源码，执行命令: `git submodule update`
+- 创建本地目录， 执行命令: `mkdir ./ao.space`
+- 进入项目目录，执行命令: `cd ./ao.space`
+- 下载源码，执行命令: `git clone --recurse-submodules git@github.com:ao-space/ao.space.git .`
 
 ## 构建和部署
 
