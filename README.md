@@ -62,7 +62,7 @@ Contributions to this project are very welcome. Here are some guidelines and sug
 
 ## Contact us
 
-- Email: developer@ao.space
+- Email: <developer@ao.space>
 - [Website](https://ao.space)
 - [Discussion group](https://slack.ao.space)
 - [Twitter](https://twitter.com/AOspaceOSC)
