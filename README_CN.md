@@ -55,7 +55,7 @@ AO.space（傲空间）由服务端、客户端、平台三个部分组成。服
 
 [API 文档](https://github.com/ao-space/api-doc)
 
-## 贡献指南 
+## 贡献指南
 
 我们非常欢迎对本项目进行贡献。以下是一些指导原则和建议，希望能够帮助您参与到项目中来。
 
@@ -63,7 +63,7 @@ AO.space（傲空间）由服务端、客户端、平台三个部分组成。服
 
 ## 联系我们
 
-- 邮箱：developer@ao.space
+- 邮箱：<developer@ao.space>
 - [傲空间官网](https://ao.space)
 - [讨论组](https://slack.ao.space)
 - [Twitter](https://twitter.com/AOspaceOSC)
@@ -72,8 +72,8 @@ AO.space（傲空间）由服务端、客户端、平台三个部分组成。服
 
 ## License
 
-AO.space is open-sourced under Apache License 2.0, see [LICENSE](xxx).
-非 2.0 的列出来。
+AO.space is open-sourced under Apache License 2.0, see [LICENSE](./LICENSE).
+<!-- 非 2.0 的列出来。 -->
 
 ## 致谢
 
