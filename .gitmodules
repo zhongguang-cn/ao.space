@@ -31,3 +31,6 @@
 [submodule "server/nginx-vod-module"]
 	path = server/nginx-vod-module
 	url = git@github.com:ao-space/nginx-vod-module.git
+[submodule "platform/platform-proxy"]
+	path = platform/platform-proxy
+	url = git@github.com:ao-space/platform-proxy.git
