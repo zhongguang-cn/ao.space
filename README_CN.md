@@ -38,6 +38,7 @@ AO.space（傲空间）由服务端、客户端、平台三个部分组成。服
 - [space-filepreview](https://github.com/ao-space/space-filepreview)：支持媒体文件的缩略图、预览图的生成
 - [space-media-vod](https://github.com/ao-space/space-media-vod)：提供流媒体播放服务
 - [space-web](https://github.com/ao-space/space-web)：提供 web 端的服务资源及请求的 nginx 反向代理服务
+- [space-upgrade](https://github.com/ao-space/space-upgrade)：按需启动，主要负责server端的升级
 
 ### 客户端（client）仓库介绍 @fuyu
 

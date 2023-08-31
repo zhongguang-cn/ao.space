@@ -53,6 +53,7 @@ cd space-filepreview ; docker build -t local/space-filepreview:{tag} .
 cd space-media-vod ; docker build -t local/space-media-vod:{tag} .
 cd space-postgresql;docker build -t local/space-postgresql:{tag} .
 cd space-agent ; docker build -t local/space-agent:{tag} .
+cd space-upgrade ; docker build -t local/space-upgrade:{tag} .
 
 ```
 
