@@ -16,13 +16,17 @@ AO.space（傲空间）由服务端、客户端、平台三个部分组成。服
 
 项目整体包含三大部分 ：
 
-- 空间平台 [platform](./platform/)
+- 平台 [platform](./platform/)
 - 服务端 [server](./server/)
 - 客户端 [client](./client/) 。
 
-### 空间平台(platform)仓库介绍  @zuling
+### 平台(platform)仓库介绍
 
-- 空间平台各模块介绍，包括模块名称，仓库地址，及主要功能
+傲空间平台为个人设备提供透明通信通道服务和互联网访问的安全防护，由如下仓库组成：
+
+- [platform-proxy](https://github.com/ao-space/platform-proxy)：为傲空间用户域名流量提供高可用转发和横向扩容的支持。
+- [platform-base](https://github.com/ao-space/platform-base)：为傲空间设备提供注册服务，以及协调和管理平台网络资源。
+- [gt](https://github.com/ao-space/gt)：提供通过中继转发的方式穿透 NAT 访问设备的网络支持服务。
 
 ### 服务端(server)仓库介绍 @zhongguang
 
@@ -45,7 +49,7 @@ AO.space（傲空间）由服务端、客户端、平台三个部分组成。服
 
 ## 文档
 
-- 跳转 api-doc 模块部署的 url
+[API 文档](https://github.com/ao-space/api-doc)
 
 ## 贡献指南 
 
@@ -55,10 +59,10 @@ AO.space（傲空间）由服务端、客户端、平台三个部分组成。服
 
 ## 联系我们
 
+- 邮箱：developer@ao.space
 - [傲空间官网](https://ao.space)
 - [讨论组](https://slack.ao.space)
 - [Twitter](https://twitter.com/AOspaceOSC)
-- [Medium](https://medium.com/@aospacecommunity)
 
 您也可以查看傲空间提供的[帮助中心](https://ao.space/support/help)
 
