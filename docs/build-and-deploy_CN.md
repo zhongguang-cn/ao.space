@@ -148,7 +148,7 @@ local/space-agent:{tag}
 
 ```
 git clone https://github.com/ao-space/client-ios.git
- ```
+```
 
  或者直接下载的方式获取。  
 
@@ -161,17 +161,17 @@ git clone https://github.com/ao-space/client-ios.git
 
 ## Release 版本下载和部署
 
-### Platform download and deploy
+### 空间平台 Release 版本下载和部署
 
 你可以在 [这里](https://ao.space/download/platform) 找到我们最新发布的版本，解压缩后，按照 README.md 文档进行部署。
 
-### Server download and deploy @xuyang
+### 服务器 Release 版本下载
 
-你可以在[这里]()找到我们最新发布的版本
+你可以在[这里](...)找到我们最新发布的版本
 
 如果你想要安装最新版本的傲空间
 
-#### 环境准备
+#### 服务器环境准备
 
 - docker (>=18.09)
 
