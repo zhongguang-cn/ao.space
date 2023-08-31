@@ -63,7 +63,7 @@ Contributions to this project are very welcome. Here are some guidelines and sug
 
 ## Contact us
 
-- Email: developer@ao.space
+- Email: <developer@ao.space>
 - [Website](https://ao.space)
 - [Discussion group](https://slack.ao.space)
 - [Twitter](https://twitter.com/AOspaceOSC)
@@ -75,7 +75,7 @@ You can also [get support for AO.spcae!](https://ao.space/en/support/help)
 AO.space is open-sourced under Apache License 2.0, see [LICENSE](xxx).
 非 2.0 的列出来。
 
-## 致谢
+## Acknowledgments
 
 AO.space heavily relies on the open-source achievements of other projects. We would like to express our special thanks to them:
 [Redis](https://redis.io/)、[OpenResty](https://github.com/openresty/)、[nginx](http://nginx.org)、[Gitlab](https://about.gitlab.com/)、[postgres](https://github.com/postgres/postgres)、[Gin](https://github.com/gin-gonic/gin)、[kaltura/nginx-vod-module](https://github.com/kaltura/nginx-vod-module)、[gson](https://github.com/google/gson)、[glide](https://github.com/bumptech/glide)、[lottie](https://github.com/airbnb/lottie-android)、[fastjson](https://github.com/alibaba/fastjson)、[eventbus](https://github.com/greenrobot/EventBus)、[ExoPlayer](https://github.com/google/ExoPlayer)、[AndroidPdfViewer](https://github.com/barteksc/AndroidPdfViewer)、[SmartRefreshLayout](https://github.com/scwang90/SmartRefreshLayout)、[Android-Office](https://github.com/zjtone/Android-Office)、[okhttp](https://github.com/square/okhttp)、[Rxjava](https://github.com/ReactiveX/RxJava)、[RxAndroid](https://github.com/ReactiveX/RxAndroid)、
