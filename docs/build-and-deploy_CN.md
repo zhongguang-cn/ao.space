@@ -2,7 +2,7 @@
 
 [English](build-and-deploy.md) | 简体中文
 
-## Source code download
+## 源码下载
 
 请按顺序执行一下命令，下载整个项目源码:
 
