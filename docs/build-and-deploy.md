@@ -20,7 +20,8 @@ It should be noted that the above process used the docker-compose.yml file in th
 
 If you want to replace some component images with locally built images, you can modify the image entry of the relevant components to the image address compiled by yourself and execute the `docker-compose up -d` command.
 
-### Server build and deploy
+
+### Server build and deploy 
 
 #### Prepare Environment
 
@@ -167,9 +168,9 @@ Open the project file EulixSpace.xcworkspace with Xcode and run the project. The
 
 You can find our latest released version at [here](https://ao.space/download/platform), extract it, and deploy it according to the README.md document.
 
-### Server download and deploy
+### Server download and deploy 
 
-you can find our newest published image at [here](...)
+you can find our newest published aospace-all-in-one image at [here](https://github.com/ao-space/space-agent/pkgs/container/space-agent)
 
 if you want to deploy newest AOspace
 

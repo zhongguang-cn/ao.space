@@ -26,7 +26,7 @@ The core of the AO.space, also known as the AO.space box, consists of sofeware, 
   - SQL Instance (Postgresql): It provides data storage and management for relational databases within the space.
   - NoSQL Instance (Redis): It offers data storage and management for non-relational databases within the space, as well as messaging capabilities.
 - GT client: It's part of implementation for transiting network from internet to NAT office or home netrok. It also helps to establish P2P connections with the AO.space client.
-- Applications: They are divided into three types: front-end mini programs, container services, and front-end and back-end hybrid applications. They are mainly used to expand the functionality of the AO.space services and are the key parts of the AO.space ecosystem. These official or third-party applications can be accessed through the AO.space Space user domain from internet, such as Card/CalDAV services.
+- Applications: They are divided into three types: front-end mini programs, container services, and front-end and back-end hybrid applications. They are mainly used to expand the functionality of the AO.space services and are the key elements of the AO.space ecosystem. These official or third-party applications can be accessed through the AO.space Space user domain from internet, such as Card/CalDAV services.
 
 ### The Platform
 
@@ -50,6 +50,27 @@ The client functions as the AO.space's frontend, granting us with access to all 
 - AO.space Application
 - Developer Options
 - Security
+
+The following diagram illustrates the basic access process that an API request passes through various components, spanning from the internet to the AO.space device.
+
+```mermaid
+graph TD
+    Z[Clients] --> |API| A[Endpoint/Internet]
+    A -->|/space/| D[GT Server]
+    A --> |/share/| D
+    D --> |API| E>Box/NAT]:::boxBondary
+    classDef boxBondary fill:#f96;
+    E --> |API| Q[GT Client]
+    Q --> |API| X[Nginx]
+    X --> |/space/| F[Gateway]
+    X --> |/share/| G[AOFS]
+    F --> |file| G
+    G --> |put| I
+    F --> |get| I[Preview]
+    F --> |meta| J[Postgresql]
+    F --> |system| K[Agent]
+    F --> |message| L[Redis]
+```
 
 For more information, please visit the [official website](https://ao.space/blog).
 
