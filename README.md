@@ -1,22 +1,22 @@
 # ao.space
 
-English | [简体中文](./README_CN.md)
+English | [简体中文](./README_cn.md)
 
 AO.space is a solution that focuses on protecting personal data security and privacy. Utilizing end-to-end encryption and device-based authentication, users have complete control over their personal accounts and data. AO.space also employs various technologies, including transparent platform forwarding, peer-to-peer acceleration, and LAN direct connection, to enable fast access to personal data from anywhere at any time. Leveraging Progressive Web App and cloud-native technology, AO.space has developed an integrated application ecosystem that could include both front-end and back-end components.
 
-AO.space is composed of three parts: server-side, client-side, and platform. The server-side and client-side run on personal devices and establish encrypted communication channels with public key authentication. The server-side supports x86_64 and aarch64 architectures and can run on personal servers, computers, or other similar devices. The client-side supports Android, iOS, and web platforms, providing users with the convenience of using AO.space anywhere and anytime.
+AO.space is composed of three parts: server-side, client-side, and platform-side. The server-side and client-side run on personal devices and establish encrypted communication channels with public key authentication. The server-side supports x86_64 and aarch64 architectures and can run on personal servers, computers, or other similar devices. The client-side supports Android, iOS, and Web platforms, providing users with the convenience of using AO.space anywhere and anytime.
 
 ## Architecture
 
 The AO.space system is composed of three main components: the server, the platform, and the client. The server is built into the device (also known as AO.space box). The platform offers fundamental network resources and relevant management. The client includes Web, iOS, Android platforms. Below is a general architectural design diagram for these components. We will go through each component and provide further details for them.
 
-![AO.space-architecture](./assets/AO.space-architecture.svg)
+![AO.space-architecture](./assets/architecture.svg)
 
-### The Server
+### Server-side
 
-The core of the AO.space, also known as the AO.space box, consists of sofeware, hardware, operating system (such as EulixOS/openEuler and other Linux distributions). On top of the basic operating system, various space-related services and essential components are deployed primarily using containerization. It comprises the following modules:
+The core of the AO.space, also known as the AO.space Server, consists of sofeware, hardware, operating system (such as EulixOS/openEuler and other Linux distributions). On top of the basic operating system, various space-related services and essential components are deployed primarily using containerization. It comprises the following modules:
 
-- Nginx: The entry service for traffic into the AO.space.
+- Web Server(nginx): The entry service for traffic into the AO.space.
 - Agent: It acts as a bridge between the client, platform, and server, adapting to the operating system.
 - Gateway: Responsible for API routing, forwarding, end-to-end encryption and decryption, authentication, and authorization of overal the AO.space application-layer requests.
 - AOFS: It offers storage and management functionalities for space files. It is a virtual file system that combines object storage and file storage methods.
@@ -25,31 +25,30 @@ The core of the AO.space, also known as the AO.space box, consists of sofeware, 
 - Databases:
   - SQL Instance (Postgresql): It provides data storage and management for relational databases within the space.
   - NoSQL Instance (Redis): It offers data storage and management for non-relational databases within the space, as well as messaging capabilities.
-- GT client: It's part of implementation for transiting network from internet to NAT office or home netrok. It also helps to establish P2P connections with the AO.space client.
-- Applications: They are divided into three types: front-end mini programs, container services, and front-end and back-end hybrid applications. They are mainly used to expand the functionality of the AO.space services and are the key elements of the AO.space ecosystem. These official or third-party applications can be accessed through the AO.space Space user domain from internet, such as Card/CalDAV services.
+- Network client: It's part of implementation for transiting network from internet to NAT office or home netrok. It also helps to establish P2P connections with the AO.space client.
+- Applications: They are divided into three types: front-end only, back-end only, and hybrid applications which contain front-end and back-end. They are mainly used to expand the functionality of the AO.space services and are the key elements of the AO.space ecosystem. These official or third-party applications can be accessed through the AO.space Space user domain from internet, such as Card/CalDAV services.
 
-### The Platform
+### Client-side
+
+The client functions as the system's frontend, granting us with access to all functionalities of the AO.space. It encompasses Web, iOS, Android platforms, providing the following key modules:
+
+- End-to-End Encryption Channel
+- Files
+- Devices
+- Family
+- Space Application
+- Developer Options
+- Security
+
+For more information, please visit the [#Documentation](#documentation).
+
+### Platform-side
 
 The platform offers essential network resources and associated management capabilities. It comprises the subsequent components:
 
 - Endpoint: It handles and dispatches the overall traffic within the AO.space ecosystem.
 - BaseService: It offers the AO.space device registration service, along with coordinating and managing platform network resources (domains, forwarding proxies, etc.).
-- GT server: It gives us the ability to send network traffic from internet to the AO.space device typically connected within a NAT office or home network. Additionally, it also supplies STUN services to enable to transit traffic through p2p channel using the WebRTC-based protocol.
-
-### The Client
-
-The client functions as the AO.space's frontend, granting us with access to all functionalities of the AO.space. It encompasses Web, iOS, Android platforms, providing the following key modules:
-
-- End-to-End Encryption Channel
-- Binding to AO.space
-- Files
-- Albums
-- Devices
-- My Shares
-- Family
-- AO.space Application
-- Developer Options
-- Security
+- Transit server: It gives us the ability to send network traffic from internet to the AO.space device typically connected within a NAT office or home network. Additionally, it also supplies STUN services to enable to transit traffic through p2p channel using the WebRTC-based protocol.
 
 The following diagram illustrates the basic access process that an API request passes through various components, spanning from the internet to the AO.space services.
 
@@ -77,17 +76,9 @@ For more information, please visit the [official website](https://ao.space/blog)
 
 The overall project includes ：
 
-- [platform](./platform/)
 - [server](./server/)
 - [client](./client/)
-
-### Platform repository introduction
-
-The responsibility of AO.space Platform is to establish a transparent communication channel for personal equipment. It consists of the following repositories:
-
-- [platform-proxy](https://github.com/ao-space/platform-proxy)：provide high-availability forwarding and horizontal expansion support for the requests from clients.
-- [platform-base](https://github.com/ao-space/platform-base)：provide the registration service of AO.space, and coordinate and manage the platform network resources.
-- [gt](https://github.com/ao-space/gt)：provides network support services that penetrate NAT access AO.space through relay forwarding.
+- [platform](./platform/)
 
 ### Server repository introduction
 
@@ -103,34 +94,42 @@ The server is the main data carrier of AO.space and is also the core of data pro
 
 ### Clients repository introduction
 
-The client supports Android, iOS, and web versions, and consists of the following repositories:
+The client supports Android, iOS, and Web versions, and consists of the following repositories:
 
 - [client-android](https://github.com/ao-space/client-android)：Provide a client on Android platform for AO.space.
 - [client-ios](https://github.com/ao-space/client-ios)：Provide a client on iOS platform for AO.space.
 - [space-web](https://github.com/ao-space/space-web)：Deployed on the server, providing a web-based client for AO.space.
 
+### Platform repository introduction
+
+The responsibility of AO.space Platform is to establish a transparent communication channel for personal equipment. It consists of the following repositories:
+
+- [platform-proxy](https://github.com/ao-space/platform-proxy)：provide high-availability forwarding and horizontal expansion support for the requests from clients.
+- [platform-base](https://github.com/ao-space/platform-base)：provide the registration service of AO.space, and coordinate and manage the platform network resources.
+- [gt](https://github.com/ao-space/gt)：provides network support services that penetrate NAT access AO.space through relay forwarding.
+
 ## Build and deploy
 
-To deploy and run the project from a release version, or to build and run it from the source code, please refer to [build-and-deploy](./docs/build-and-deploy.md).
+To deploy and run the project from a release version, or to build and run it from the source code, please refer to [build-and-deploy](./docs/en/build-and-deploy.md).
 
-## Document
+## Documentation
 
-- [API](https://github.com/ao-space/api-doc)
+- [Developer Documentation](https://ao.space/docs)
+- [User Manual](https://ao.space/support/help)
+- [Blog](https://ao.space/blog)
+- [API References](https://github.com/ao-space/api-doc)
 
 ## Contribution Guidelines
 
 Contributions to this project are very welcome. Here are some guidelines and suggestions to help you get involved in the project.
 
-[Contribution Guidelines](./docs/contribution-guidelines.md)
+[Contribution Guidelines](./docs/en/contribution-guidelines.md)
 
 ## Contact us
 
 - Email: <developer@ao.space>
-- [Website](https://ao.space)
+- [Official Website](https://ao.space)
 - [Discussion group](https://slack.ao.space)
-- [Twitter](https://twitter.com/AOspaceOSC)
-
-You can also [get support for AO.spcae!](https://ao.space/en/support/help)
 
 ## License
 

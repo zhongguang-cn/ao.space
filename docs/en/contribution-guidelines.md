@@ -1,5 +1,7 @@
 # Contribution Guidelines
 
+Englis | [简体中文](../cn/contribution-guidelines.md)
+
 Contributions to this project are very welcome. Here are some guidelines and suggestions to help you get involved in the project.
 
 ### Contributing Code

@@ -1,6 +1,6 @@
 # 构建部署
 
-[English](build-and-deploy.md) | 简体中文
+[English](../en/build-and-deploy.md) | 简体中文
 
 ## 源码下载
 
