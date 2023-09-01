@@ -10,7 +10,7 @@ AO.space is composed of three parts: server-side, client-side, and platform-side
 
 The AO.space system is composed of three main components: the server, the platform, and the client. The server is built into the device (also known as AO.space box). The platform offers fundamental network resources and relevant management. The client includes Web, iOS, Android platforms. Below is a general architectural design diagram for these components. We will go through each component and provide further details for them.
 
-![AO.space-architecture](./assets/architecture.svg)
+![AO.space-architecture](./assets/architecture.png)
 
 ### Server-side
 
@@ -40,8 +40,6 @@ The client functions as the system's frontend, granting us with access to all fu
 - Developer Options
 - Security
 
-For more information, please visit the [#Documentation](#documentation).
-
 ### Platform-side
 
 The platform offers essential network resources and associated management capabilities. It comprises the subsequent components:
@@ -50,27 +48,7 @@ The platform offers essential network resources and associated management capabi
 - BaseService: It offers the AO.space device registration service, along with coordinating and managing platform network resources (domains, forwarding proxies, etc.).
 - Transit server: It gives us the ability to send network traffic from internet to the AO.space device typically connected within a NAT office or home network. Additionally, it also supplies STUN services to enable to transit traffic through p2p channel using the WebRTC-based protocol.
 
-The following diagram illustrates the basic access process that an API request passes through various components, spanning from the internet to the AO.space services.
-
-```mermaid
-graph TD
-    Z[Clients] --> |API| A[Endpoint/Internet]
-    A -->|/space/| D[GT Server]
-    A --> |/share/| D
-    D --> |API| E>Box/NAT]:::boxBondary
-    classDef boxBondary fill:#f96;
-    E --> |API| Q[GT Client]
-    Q --> |API| X[Nginx]
-    X --> |/space/| F[Gateway]
-    X --> |/share/| G[AOFS]
-    F --> |file| G
-    F --> |preview| I[Preview]
-    F --> |meta| J[Postgresql]
-    F --> |system| K[Agent]
-    F --> |message| L[Redis]
-```
-
-For more information, please visit the [official website](https://ao.space/blog).
+For more information, please visit the [#Documentation](#documentation).
 
 ## Source code repository introduction
 
