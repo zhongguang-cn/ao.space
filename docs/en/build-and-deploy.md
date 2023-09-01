@@ -46,15 +46,15 @@ For example, *local/space-aofs:{tag}* is used here.
 
 
 ```shell
-
-cd space-aofs ; docker build -t local/space-aofs:{tag} .
-cd space-gateway ; docker build -t local/space-gateway:{tag} .
-cd space-web ; docker build -t local/space-web:{tag} .
-cd space-filepreview ; docker build -t local/space-filepreview:{tag} .
-cd space-media-vod ; docker build -t local/space-media-vod:{tag} .
-cd space-postgresql;docker build -t local/space-postgresql:{tag} .
-cd space-agent ; docker build -t local/space-agent:{tag} .
-cd space-upgrade ; docker build -t local/space-upgrade:{tag} .
+cd ./server ; 
+docker build -t local/space-aofs:{tag} ./space-aofs
+docker build -t local/space-gateway:{tag} ./space-gateway
+docker build -t local/space-web:{tag} ./space-web
+docker build -t local/space-filepreview:{tag} ./space-filepreview
+docker build -t local/space-media-vod:{tag} ./space-media-vod
+docker build -t local/space-postgresql:{tag} ./space-postgresql
+docker build -t local/space-agent:{tag} ./space-postgresql
+docker build -t local/space-upgrade:{tag} ./space-upgrade
 
 ```
 
@@ -71,7 +71,7 @@ Notes: DATADIR is aospace server directory which you want to install
 - Linux
 
 ```shell
-export DATADIR="/mnt/aospace"
+export DATADIR="$HOME/aospace"
 sudo docker network create ao-space;
 sudo docker run -d --name aospace-all-in-one  \
         --restart always  \
