@@ -6,9 +6,9 @@ Englis | [简体中文](../cn/build-and-deploy.md)
 
 Please execute the following command to download the entire source code of the project:
 
-- Create a local directory, run cmd: `mkdir ./ao.space`
+- Create a local directory, run cmd:  `mkdir ./WORKDIR && cd ./WORKDIR`
+- Download source code, run cmd: `git clone --recurse-submodules git@github.com:ao-space/ao.space.git`
 - Enter the folder/directory, run cmd: `cd ./ao.space`
-- Download source code, run cmd: `git clone --recurse-submodules git@github.com:ao-space/ao.space.git .`
 
 ## Build and deploy
 
