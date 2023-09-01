@@ -20,7 +20,7 @@ It should be noted that the above process used the docker-compose.yml file in th
 
 If you want to replace some component images with locally built images, you can modify the image entry of the relevant components to the image address compiled by yourself and execute the `docker-compose up -d` command.
 
-### Server build and deploy @xuyang
+### Server build and deploy
 
 #### Prepare Environment
 
@@ -119,7 +119,7 @@ local/space-agent:{tag}  # you can change {tag} to your own build tag
 
 you need to change {tag} to your own build tag
 
-### Clients build and run  @fuyu
+### Clients build and run  
 
 #### Android
 
@@ -147,7 +147,7 @@ Get the source code
 
 You can use the clone command
 
-  ```
+  ```text
   git clone https://github.com/ao-space/client-ios.git
   ```
 
@@ -167,13 +167,13 @@ Open the project file EulixSpace.xcworkspace with Xcode and run the project. The
 
 You can find our latest released version at [here](https://ao.space/download/platform), extract it, and deploy it according to the README.md document.
 
-### Server download and deploy @xuyang
+### Server download and deploy
 
-you can find our newest published image at [here]()
+you can find our newest published image at [here](...)
 
 if you want to deploy newest AOspace
 
-#### Prepare Environment
+#### Server Prepare Environment
 
 - docker (>=18.09)
 

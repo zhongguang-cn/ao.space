@@ -69,7 +69,7 @@ The responsibility of AO.space Platform is to establish a transparent communicat
 - [platform-base](https://github.com/ao-space/platform-base)：provide the registration service of AO.space, and coordinate and manage the platform network resources.
 - [gt](https://github.com/ao-space/gt)：provides network support services that penetrate NAT access AO.space through relay forwarding.
 
-### Server repository introduction @zhongguang
+### Server repository introduction
 
 The server is the main data carrier of AO.space and is also the core of data protection. It consists of the following repositories:
   
@@ -81,7 +81,7 @@ The server is the main data carrier of AO.space and is also the core of data pro
 - [space-web](https://github.com/ao-space/space-web)：Providing an Nginx reverse proxy service for serving web-based service resources and requests
 - [space-upgrade](https://github.com/ao-space/space-upgrade)：On-demand startup, mainly responsible for server-side upgrades
 
-### Clients repository introduction @fuyu
+### Clients repository introduction
 
 The client supports Android, iOS, and web versions, and consists of the following repositories:
 

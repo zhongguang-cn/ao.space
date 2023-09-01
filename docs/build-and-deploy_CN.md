@@ -20,7 +20,7 @@
 
 如果您希望用本地自己构建的镜像来替换部分组件，可将相关组件的 image 项修改为您自己编译的镜像地址，并执行 `docker-compose up -d` 命令即可。
 
-### 服务端构建和部署 @xuyang
+### 服务端构建和部署
 
 #### 环境准备
 
@@ -120,7 +120,7 @@ local/space-agent:{tag}
 
 你需要将{tag} 修改为自己本地构建的镜像tag
 
-### 客户端构建和运行  @fuyu
+### 客户端构建和运行  
 
 #### Android
 
@@ -146,9 +146,7 @@ local/space-agent:{tag}
 
 可以通过 clone 命令方式
 
-```
-git clone https://github.com/ao-space/client-ios.git
-```
+` git clone <https://github.com/ao-space/client-ios.git> `
 
  或者直接下载的方式获取。  
 
