@@ -169,7 +169,7 @@ You can find our latest released version at [here](https://ao.space/download/pla
 
 ### Server download and deploy @xuyang
 
-you can find our newest published image at [here]()
+you can find our newest published aospace-all-in-one image at [here](https://github.com/ao-space/space-agent/pkgs/container/space-agent)
 
 if you want to deploy newest AOspace
 

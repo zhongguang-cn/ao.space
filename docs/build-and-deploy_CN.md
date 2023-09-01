@@ -167,7 +167,7 @@ git clone https://github.com/ao-space/client-ios.git
 
 ### 服务器 Release 版本下载
 
-你可以在[这里](...)找到我们最新发布的版本
+你可以在[here](https://github.com/ao-space/space-agent/pkgs/container/space-agent)找到我们最新发布的版本
 
 如果你想要安装最新版本的傲空间
 
