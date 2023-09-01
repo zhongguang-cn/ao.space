@@ -43,9 +43,9 @@ or space-agent/res/docker-compose_run_as_docker_network_mode_host.yml (linux) to
 
 For example, *local/space-aofs:{tag}* is used here.
 
-```shell
 
-#构建镜像
+
+```shell
 
 cd space-aofs ; docker build -t local/space-aofs:{tag} .
 cd space-gateway ; docker build -t local/space-gateway:{tag} .
@@ -66,18 +66,21 @@ After making sure that the docker-compose file in space-agent has been modified 
 
 Use the following command to deploy and run
 
+Notes: DATADIR is aospace server directory which you want to install
+
 - Linux
 
 ```shell
-        sudo docker network create ao-space;
-        sudo docker run -d --name aospace-all-in-one  \
+export DATADIR="/mnt/aospace"
+sudo docker network create ao-space;
+sudo docker run -d --name aospace-all-in-one  \
         --restart always  \
         --network=ao-space  \
         --publish 5678:5678  \
         --publish 127.0.0.1:5680:5680  \
-        -v $AOSPACE_HOME_DIR:/aospace  \
+        -v $DATADIR:/aospace  \
         -v /var/run/docker.sock:/var/run/docker.sock:ro  \
-        -e AOSPACE_DATADIR=$AOSPACE_HOME_DIR \
+        -e AOSPACE_DATADIR=$DATADIR \
         -e RUN_NETWORK_MODE="host"  \
         local/space-agent:{tag}
 ```
@@ -88,15 +91,15 @@ you need to change {tag} to your own build tag
 
 ```shell
 docker network create ao-space
-docker run -d --name aospace-all-in-one `
---restart always `
---network=ao-space `
---publish 5678:5678 `
---publish 127.0.0.1:5680:5680 `
--v c:/aospace:/aospace ` # you can change c:/ to your own disk ,like d:/
--v //var/run/docker.sock:/var/run/docker.sock:ro `
--e AOSPACE_DATADIR=/run/desktop/mnt/host/c/aospace `
-local/space-agent:{tag} 
+docker run -d --name aospace-all-in-one \
+        --restart always \
+        --network=ao-space \
+        --publish 5678:5678 \
+        --publish 127.0.0.1:5680:5680 \
+        -v c:/aospace:/aospace \ # you can change c:/ to your own disk ,like d:/
+        -v //var/run/docker.sock:/var/run/docker.sock:ro \
+        -e AOSPACE_DATADIR=/run/desktop/mnt/host/c/aospace \
+        local/space-agent:{tag} 
 ```
 
 you need to change {tag} to your own build tag
@@ -104,18 +107,18 @@ you need to change {tag} to your own build tag
 - MacOS
 
 ```bash
-docker network create ao-space
-HOME="/Users/User-Name-Here" # you can change User-Name-Here to your own name
+HOME="/Users/User-Name-Here"
 DATADIR="$HOME/aospace"
+docker network create ao-space
 docker run -d --name aospace-all-in-one  \
---restart always  \
---network=ao-space  \
---publish 5678:5678  \
---publish 127.0.0.1:5680:5680  \
--v $DATADIR:/aospace  \
--v /var/run/docker.sock.raw:/var/run/docker.sock:ro  \
--e AOSPACE_DATADIR=$DATADIR  \
-local/space-agent:{tag}  # you can change {tag} to your own build tag
+        --restart always  \
+        --network=ao-space  \
+        --publish 5678:5678  \
+        --publish 127.0.0.1:5680:5680  \
+        -v $DATADIR:/aospace  \
+        -v /var/run/docker.sock.raw:/var/run/docker.sock:ro  \
+        -e AOSPACE_DATADIR=$DATADIR  \
+        local/space-agent:{tag}  # you can change {tag} to your own build tag
 ```
 
 you need to change {tag} to your own build tag
@@ -183,17 +186,18 @@ if you want to deploy newest AOspace
 - Linux
 
 ```shell
-        sudo docker network create ao-space;
-        sudo docker run -d --name aospace-all-in-one  \
+export DATADIR="$HOME/aospace"
+sudo docker network create ao-space;
+sudo docker run -d --name aospace-all-in-one  \
         --restart always  \
         --network=ao-space  \
         --publish 5678:5678  \
         --publish 127.0.0.1:5680:5680  \
-        -v $AOSPACE_HOME_DIR:/aospace  \
+        -v $DATADIR:/aospace  \
         -v /var/run/docker.sock:/var/run/docker.sock:ro  \
-        -e AOSPACE_DATADIR=$AOSPACE_HOME_DIR \
+        -e AOSPACE_DATADIR=$DATADIR \
         -e RUN_NETWORK_MODE="host"  \
-        ghcr.io/ao-space/space-agent:dev
+        ghcr.io/ao-space/space-agent:v1.0.0
 ```
 
 - Windows
@@ -201,14 +205,14 @@ if you want to deploy newest AOspace
 ```shell
 docker network create ao-space
 docker run -d --name aospace-all-in-one `
---restart always `
---network=ao-space `
---publish 5678:5678 `
---publish 127.0.0.1:5680:5680 `
--v c:/aospace:/aospace ` # you can change c:/ to your own disk ,like d:/
--v //var/run/docker.sock:/var/run/docker.sock:ro `
--e AOSPACE_DATADIR=/run/desktop/mnt/host/c/aospace `
-ghcr.io/ao-space/space-agent:dev
+        --restart always `
+        --network=ao-space `
+        --publish 5678:5678 `
+        --publish 127.0.0.1:5680:5680 `
+        -v c:/aospace:/aospace ` # you can change c:/ to your own disk ,like d:/
+        -v //var/run/docker.sock:/var/run/docker.sock:ro `
+        -e AOSPACE_DATADIR=/run/desktop/mnt/host/c/aospace `
+        ghcr.io/ao-space/space-agent:v1.0.0
 ```
 
 - MacOS
@@ -218,14 +222,14 @@ docker network create ao-space
 HOME="/Users/User-Name-Here" # you can change User-Name-Here to your own name
 DATADIR="$HOME/aospace"
 docker run -d --name aospace-all-in-one  \
---restart always  \
---network=ao-space  \
---publish 5678:5678  \
---publish 127.0.0.1:5680:5680  \
--v $DATADIR:/aospace  \
--v /var/run/docker.sock.raw:/var/run/docker.sock:ro  \
--e AOSPACE_DATADIR=$DATADIR  \
-ghcr.io/ao-space/space-agent:dev
+        --restart always  \
+        --network=ao-space  \
+        --publish 5678:5678  \
+        --publish 127.0.0.1:5680:5680  \
+        -v $DATADIR:/aospace  \
+        -v /var/run/docker.sock.raw:/var/run/docker.sock:ro  \
+        -e AOSPACE_DATADIR=$DATADIR  \
+        ghcr.io/ao-space/space-agent:v1.0.0
 ```
 
 more docs refer to [AOspace Website](https://ao.space/open/documentation/105001)

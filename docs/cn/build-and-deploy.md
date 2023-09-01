@@ -6,9 +6,9 @@
 
 请按顺序执行一下命令，下载整个项目源码:
 
-- 创建本地目录， 执行命令: `mkdir ./ao.space`
-- 进入项目目录，执行命令: `cd ./ao.space`
-- 下载源码，执行命令: `git clone --recurse-submodules git@github.com:ao-space/ao.space.git .`
+- 创建并进入本地工作目录， 执行命令: `mkdir ./WORKDIR && cd ./WORKDIR`
+- 下载源码，执行命令: `git clone --recurse-submodules git@github.com:ao-space/ao.space.git`
+- 进入代码目录： `cd ao.space`
 
 ## 构建和部署
 
@@ -19,7 +19,6 @@
 需要提醒的是上述过程使用了 platform-deploy 仓库中的 docker-compose.yml 文件来编排相关组件的容器部署，其所使用的镜像为 github 镜像仓库中 dev 分支的最新镜像。
 
 如果您希望用本地自己构建的镜像来替换部分组件，可将相关组件的 image 项修改为您自己编译的镜像地址，并执行 `docker-compose up -d` 命令即可。
-
 
 ### 服务端构建和部署 
 
@@ -44,8 +43,6 @@ docker镜像构建方式基本一样，都是用Dockerfile来构建镜像
 例如这里用的 *local/space-aofs:{tag}*
 
 ```shell
-#构建镜像
-
 cd space-aofs ; docker build -t local/space-aofs:{tag} .
 cd space-gateway ; docker build -t local/space-gateway:{tag} .
 cd space-web ; docker build -t local/space-web:{tag} .
@@ -63,22 +60,23 @@ cd space-upgrade ; docker build -t local/space-upgrade:{tag} .
 
 全部构建完成后，您可以开始部署自己的傲空间
 
-确保space-agent 中的docker-compose 文件在编译前已被修改使用本地的image后
+确保 space-agent 中的 docker-compose 文件在编译前已被修改使用本地的image后
 
 使用以下命令部署并运行
 
 - Linux
 
 ```shell
-        sudo docker network create ao-space;
-        sudo docker run -d --name aospace-all-in-one  \
+DATADIR="$HOME/aospace"
+sudo docker network create ao-space;
+sudo docker run -d --name aospace-all-in-one  \
         --restart always  \
         --network=ao-space  \
         --publish 5678:5678  \
         --publish 127.0.0.1:5680:5680  \
-        -v $AOSPACE_HOME_DIR:/aospace  \
+        -v $DATADIR:/aospace  \
         -v /var/run/docker.sock:/var/run/docker.sock:ro  \
-        -e AOSPACE_DATADIR=$AOSPACE_HOME_DIR \
+        -e AOSPACE_DATADIR=$DATADIR \
         -e RUN_NETWORK_MODE="host"  \
         local/space-agent:{tag}
 ```
@@ -89,15 +87,15 @@ cd space-upgrade ; docker build -t local/space-upgrade:{tag} .
 
 ```shell
 docker network create ao-space
-docker run -d --name aospace-all-in-one `
---restart always `
---network=ao-space `
---publish 5678:5678 `
---publish 127.0.0.1:5680:5680 `
--v c:/aospace:/aospace ` # you can change c:/ to your own disk ,like d:/
--v //var/run/docker.sock:/var/run/docker.sock:ro `
--e AOSPACE_DATADIR=/run/desktop/mnt/host/c/aospace `
-local/space-agent:{tag}
+docker run -d --name aospace-all-in-one \
+        --restart always \
+        --network=ao-space `
+        --publish 5678:5678 `
+        --publish 127.0.0.1:5680:5680 `
+        -v c:/aospace:/aospace ` # you can change c:/ to your own disk ,like d:/
+        -v //var/run/docker.sock:/var/run/docker.sock:ro `
+        -e AOSPACE_DATADIR=/run/desktop/mnt/host/c/aospace `
+        local/space-agent:{tag}
 ```
 
 你需要将{tag} 修改为自己本地构建的镜像tag
@@ -106,17 +104,16 @@ local/space-agent:{tag}
 
 ```zsh
 docker network create ao-space
-HOME="/Users/User-Name-Here" # you can change User-Name-Here to your own name
 DATADIR="$HOME/aospace"
 docker run -d --name aospace-all-in-one  \
---restart always  \
---network=ao-space  \
---publish 5678:5678  \
---publish 127.0.0.1:5680:5680  \
--v $DATADIR:/aospace  \
--v /var/run/docker.sock.raw:/var/run/docker.sock:ro  \
--e AOSPACE_DATADIR=$DATADIR  \
-local/space-agent:{tag}
+        --restart always  \
+        --network=ao-space  \
+        --publish 5678:5678  \
+        --publish 127.0.0.1:5680:5680  \
+        -v $DATADIR:/aospace  \
+        -v /var/run/docker.sock.raw:/var/run/docker.sock:ro  \
+        -e AOSPACE_DATADIR=$DATADIR  \
+        local/space-agent:{tag}
 ```
 
 你需要将{tag} 修改为自己本地构建的镜像tag
@@ -176,54 +173,58 @@ local/space-agent:{tag}
 
 #### 安装部署
 
-- Linux
+注：DATADIR为aospace的安装目录
+
+##### Linux
 
 ```shell
-        sudo docker network create ao-space;
-        sudo docker run -d --name aospace-all-in-one  \
+export DATADIR="/mnt/aospace";
+sudo docker network create ao-space;
+sudo docker run -d --name aospace-all-in-one  \
         --restart always  \
         --network=ao-space  \
         --publish 5678:5678  \
         --publish 127.0.0.1:5680:5680  \
-        -v $AOSPACE_HOME_DIR:/aospace  \
+        -v $DATADIR:/aospace  \
         -v /var/run/docker.sock:/var/run/docker.sock:ro  \
-        -e AOSPACE_DATADIR=$AOSPACE_HOME_DIR \
+        -e AOSPACE_DATADIR=$DATADIR \
         -e RUN_NETWORK_MODE="host"  \
-        ghcr.io/ao-space/space-agent:dev
+        ghcr.io/ao-space/space-agent:v1.0.0
 ```
 
 你需要将{tag} 修改为自己本地构建的镜像tag
 
-- Windows
+##### Windows
 
 ```shell
+
 docker network create ao-space
-docker run -d --name aospace-all-in-one `
---restart always `
---network=ao-space `
---publish 5678:5678 `
---publish 127.0.0.1:5680:5680 `
--v c:/aospace:/aospace ` # you can change c:/ to your own disk ,like d:/
--v //var/run/docker.sock:/var/run/docker.sock:ro `
--e AOSPACE_DATADIR=/run/desktop/mnt/host/c/aospace `
-ghcr.io/ao-space/space-agent:dev
+docker run -d --name aospace-all-in-one \
+        --restart always \
+        --network=ao-space \
+        --publish 5678:5678 \
+        --publish 127.0.0.1:5680:5680 \
+        -v c:/aospace:/aospace \ # you can change c:/ to your own disk ,like d:/
+        -v //var/run/docker.sock:/var/run/docker.sock:ro \
+        -e AOSPACE_DATADIR=/run/desktop/mnt/host/c/aospace \
+        ghcr.io/ao-space/space-agent:v1.0.0
 ```
 
-- MacOS
+##### MacOS
 
 ```zsh
-docker network create ao-space
 HOME="/Users/User-Name-Here" # you can change User-Name-Here to your own name
 DATADIR="$HOME/aospace"
+docker network create ao-space
 docker run -d --name aospace-all-in-one  \
---restart always  \
---network=ao-space  \
---publish 5678:5678  \
---publish 127.0.0.1:5680:5680  \
--v $DATADIR:/aospace  \
--v /var/run/docker.sock.raw:/var/run/docker.sock:ro  \
--e AOSPACE_DATADIR=$DATADIR  \
-ghcr.io/ao-space/space-agent:dev
+        --restart always  \
+        --network=ao-space  \
+        --publish 5678:5678  \
+        --publish 127.0.0.1:5680:5680  \
+        -v $DATADIR:/aospace  \
+        -v /var/run/docker.sock.raw:/var/run/docker.sock:ro  \
+        -e AOSPACE_DATADIR=$DATADIR  \
+        ghcr.io/ao-space/space-agent:v1.0.0
 ```
 
 更多部署文档请参考[官网](https://ao.space/open/documentation/105001)
