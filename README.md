@@ -10,7 +10,6 @@ AO.space is composed of three parts: server-side, client-side, and platform. The
 
 The AO.space system is composed of three main components: the server, the platform, and the client. The server is built into the device (also known as AO.space box). The platform offers fundamental network resources and relevant management. The client includes Web, iOS, Android platforms. Below is a general architectural design diagram for these components. We will go through each component and provide further details for them.
 
-
 ![AO.space-architecture](./assets/AO.space-architecture.svg)
 
 ### The Server
@@ -136,8 +135,9 @@ You can also [get support for AO.spcae!](https://ao.space/en/support/help)
 
 ## License
 
-AO.space is open-sourced under Apache License 2.0, see [LICENSE](./LICENSE).
-<!-- 非 2.0 的列出来。 -->
+AO.space is open-sourced under Apache License 2.0, see [LICENSE](./LICENSE). The following sub-projects use other open-source licenses：
+
+- [space-media-vod](https://github.com/ao-space/space-media-vod) -  AGPL-3.0 license
 
 ## Acknowledgments
 

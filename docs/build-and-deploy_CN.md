@@ -20,7 +20,7 @@
 
 如果您希望用本地自己构建的镜像来替换部分组件，可将相关组件的 image 项修改为您自己编译的镜像地址，并执行 `docker-compose up -d` 命令即可。
 
-### 服务端构建和部署 @xuyang
+### 服务端构建和部署 
 
 #### 环境准备
 
@@ -167,7 +167,7 @@ git clone https://github.com/ao-space/client-ios.git
 
 ### 服务器 Release 版本下载
 
-你可以在[这里](...)找到我们最新发布的版本
+你可以在[here](https://github.com/ao-space/space-agent/pkgs/container/space-agent)找到我们最新发布的版本
 
 如果你想要安装最新版本的傲空间
 
