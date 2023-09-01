@@ -173,20 +173,23 @@ docker run -d --name aospace-all-in-one  \
 
 #### 安装部署
 
+注：DATADIR为aospace的安装目录
+
 ##### Linux
 
 ```shell
+export DATADIR="/mnt/aospace";
 sudo docker network create ao-space;
 sudo docker run -d --name aospace-all-in-one  \
         --restart always  \
         --network=ao-space  \
         --publish 5678:5678  \
         --publish 127.0.0.1:5680:5680  \
-        -v $AOSPACE_HOME_DIR:/aospace  \
+        -v $DATADIR:/aospace  \
         -v /var/run/docker.sock:/var/run/docker.sock:ro  \
-        -e AOSPACE_DATADIR=$AOSPACE_HOME_DIR \
+        -e AOSPACE_DATADIR=$DATADIR \
         -e RUN_NETWORK_MODE="host"  \
-        ghcr.io/ao-space/space-agent:dev
+        ghcr.io/ao-space/space-agent:v1.0.0
 ```
 
 你需要将{tag} 修改为自己本地构建的镜像tag
@@ -194,6 +197,7 @@ sudo docker run -d --name aospace-all-in-one  \
 ##### Windows
 
 ```shell
+
 docker network create ao-space
 docker run -d --name aospace-all-in-one \
         --restart always \
@@ -203,15 +207,15 @@ docker run -d --name aospace-all-in-one \
         -v c:/aospace:/aospace \ # you can change c:/ to your own disk ,like d:/
         -v //var/run/docker.sock:/var/run/docker.sock:ro \
         -e AOSPACE_DATADIR=/run/desktop/mnt/host/c/aospace \
-        ghcr.io/ao-space/space-agent:dev
+        ghcr.io/ao-space/space-agent:v1.0.0
 ```
 
 ##### MacOS
 
 ```zsh
-docker network create ao-space
 HOME="/Users/User-Name-Here" # you can change User-Name-Here to your own name
 DATADIR="$HOME/aospace"
+docker network create ao-space
 docker run -d --name aospace-all-in-one  \
         --restart always  \
         --network=ao-space  \
@@ -220,7 +224,7 @@ docker run -d --name aospace-all-in-one  \
         -v $DATADIR:/aospace  \
         -v /var/run/docker.sock.raw:/var/run/docker.sock:ro  \
         -e AOSPACE_DATADIR=$DATADIR  \
-        ghcr.io/ao-space/space-agent:dev
+        ghcr.io/ao-space/space-agent:v1.0.0
 ```
 
 更多部署文档请参考[官网](https://ao.space/open/documentation/105001)

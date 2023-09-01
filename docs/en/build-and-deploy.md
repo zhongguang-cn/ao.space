@@ -43,9 +43,9 @@ or space-agent/res/docker-compose_run_as_docker_network_mode_host.yml (linux) to
 
 For example, *local/space-aofs:{tag}* is used here.
 
-```shell
 
-#构建镜像
+
+```shell
 
 cd space-aofs ; docker build -t local/space-aofs:{tag} .
 cd space-gateway ; docker build -t local/space-gateway:{tag} .
@@ -66,10 +66,12 @@ After making sure that the docker-compose file in space-agent has been modified 
 
 Use the following command to deploy and run
 
+Notes: DATADIR is aospace server directory which you want to install
+
 - Linux
 
 ```shell
-export DATADIR="$HOME/aospace"
+export DATADIR="/mnt/aospace"
 sudo docker network create ao-space;
 sudo docker run -d --name aospace-all-in-one  \
         --restart always  \
@@ -105,8 +107,9 @@ you need to change {tag} to your own build tag
 - MacOS
 
 ```bash
+HOME="/Users/User-Name-Here"
+DATADIR="$HOME/aospace"
 docker network create ao-space
-export DATADIR="$HOME/aospace"
 docker run -d --name aospace-all-in-one  \
         --restart always  \
         --network=ao-space  \
@@ -194,7 +197,7 @@ sudo docker run -d --name aospace-all-in-one  \
         -v /var/run/docker.sock:/var/run/docker.sock:ro  \
         -e AOSPACE_DATADIR=$DATADIR \
         -e RUN_NETWORK_MODE="host"  \
-        ghcr.io/ao-space/space-agent:dev
+        ghcr.io/ao-space/space-agent:v1.0.0
 ```
 
 - Windows
@@ -209,14 +212,15 @@ docker run -d --name aospace-all-in-one `
         -v c:/aospace:/aospace ` # you can change c:/ to your own disk ,like d:/
         -v //var/run/docker.sock:/var/run/docker.sock:ro `
         -e AOSPACE_DATADIR=/run/desktop/mnt/host/c/aospace `
-        ghcr.io/ao-space/space-agent:dev
+        ghcr.io/ao-space/space-agent:v1.0.0
 ```
 
 - MacOS
 
 ```zsh
 docker network create ao-space
-export DATADIR="$HOME/aospace"
+HOME="/Users/User-Name-Here" # you can change User-Name-Here to your own name
+DATADIR="$HOME/aospace"
 docker run -d --name aospace-all-in-one  \
         --restart always  \
         --network=ao-space  \
@@ -225,7 +229,7 @@ docker run -d --name aospace-all-in-one  \
         -v $DATADIR:/aospace  \
         -v /var/run/docker.sock.raw:/var/run/docker.sock:ro  \
         -e AOSPACE_DATADIR=$DATADIR  \
-        ghcr.io/ao-space/space-agent:dev
+        ghcr.io/ao-space/space-agent:v1.0.0
 ```
 
 more docs refer to [AOspace Website](https://ao.space/open/documentation/105001)
