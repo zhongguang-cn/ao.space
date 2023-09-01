@@ -65,8 +65,7 @@ graph TD
     X --> |/space/| F[Gateway]
     X --> |/share/| G[AOFS]
     F --> |file| G
-    G --> |put| I
-    F --> |get| I[Preview]
+    F --> |preview| I[Preview]
     F --> |meta| J[Postgresql]
     F --> |system| K[Agent]
     F --> |message| L[Redis]
