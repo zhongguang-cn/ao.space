@@ -52,6 +52,27 @@ The client functions as the AO.space's frontend, granting us with access to all 
 - Developer Options
 - Security
 
+The following diagram illustrates the basic access process that an API request passes through various components, spanning from the internet to the AO.space device.
+
+```mermaid
+graph TD
+    Z[Clients] --> |API| A[Endpoint/Internet]
+    A -->|/space/| D[GT Server]
+    A --> |/share/| D
+    D --> |API| E>Box/NAT]:::boxBondary
+    classDef boxBondary fill:#f96;
+    E --> |API| Q[GT Client]
+    Q --> |API| X[Nginx]
+    X --> |/space/| F[Gateway]
+    X --> |/share/| G[AOFS]
+    F --> |file| G
+    G --> |put| I
+    F --> |get| I[Preview]
+    F --> |meta| J[Postgresql]
+    F --> |system| K[Agent]
+    F --> |message| L[Redis]
+```
+
 For more information, please visit the [official website](https://ao.space/blog).
 
 ## Source code repository introduction
