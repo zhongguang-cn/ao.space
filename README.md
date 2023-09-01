@@ -39,7 +39,7 @@ The platform offers essential network resources and associated management capabi
 
 ### The Client
 
-The client serves as the front-end of the entire system, granting us with access to all functionalities of the AO.space. It encompasses Web, iOS, Android platforms, providing the following key modules:
+The client functions as the system's frontend, granting us with access to all functionalities of the AO.space. It encompasses Web, iOS, Android platforms, providing the following key modules:
 
 - End-to-End Encryption Channel
 - Binding to AO.space
