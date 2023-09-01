@@ -10,7 +10,6 @@ AO.space is composed of three parts: server-side, client-side, and platform. The
 
 The AO.space system is composed of three main components: the server, the client, and the platform. The server is built into the device (also known as AO.space box). The client encompasses Web, iOS, Android platform. The platform offers fundamental network resources and relevant management. Below is a general architectural design diagram for these components. We will dive into each component and provide further details for them.
 
-
 ![AO.space-architecture](./assets/AO.space-architecture.svg)
 
 ### The Server
@@ -28,7 +27,6 @@ The server is core of AO.space, also known as the AO.space box, consists of hard
   - NoSQL Instance (Redis): It offers data storage and management for non-relational databases within the space, as well as messaging capabilities.
 - Netwrokcli: It's part of implementation for transfering network from internet to NAT office or home netrok. It also helps to establish P2P connections with the AO.space client.
 - Applications: They are deployed within the box to extend service capabilities. These offical or third-party applications are accessible via AO.space user domains, such as the Card/CalDAV service.
-
 
 For more information, please visit the [official website](https://ao.space/blog).
 
@@ -93,8 +91,9 @@ You can also [get support for AO.spcae!](https://ao.space/en/support/help)
 
 ## License
 
-AO.space is open-sourced under Apache License 2.0, see [LICENSE](./LICENSE).
-<!-- 非 2.0 的列出来。 -->
+AO.space is open-sourced under Apache License 2.0, see [LICENSE](./LICENSE). The following sub-projects use other open-source licenses：
+
+- [space-media-vod](https://github.com/ao-space/space-media-vod) -  AGPL-3.0 license
 
 ## Acknowledgments
 

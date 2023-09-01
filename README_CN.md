@@ -73,8 +73,9 @@ AO.space（傲空间）由服务端、客户端、平台三个部分组成。服
 
 ## License
 
-AO.space 在 Apache License 2.0 下进行开源, 请查看 [LICENSE](./LICENSE)。
-<!-- 非 2.0 的列出来。 -->
+AO.space 在 Apache License 2.0 下进行开源, 请查看 [LICENSE](./LICENSE)。以下子项目使用其它开源协议：
+
+- [space-media-vod](https://github.com/ao-space/space-media-vod) -  AGPL-3.0 license
 
 ## 致谢
 
