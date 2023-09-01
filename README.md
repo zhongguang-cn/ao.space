@@ -51,7 +51,7 @@ The client functions as the AO.space's frontend, granting us with access to all 
 - Developer Options
 - Security
 
-The following diagram illustrates the basic access process that an API request passes through various components, spanning from the internet to the AO.space device.
+The following diagram illustrates the basic access process that an API request passes through various components, spanning from the internet to the AO.space services.
 
 ```mermaid
 graph TD

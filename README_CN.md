@@ -51,6 +51,27 @@ AO.space（傲空间）由服务端、客户端、平台三个部分组成。服
 - 开发者选项
 - 安全
 
+下面图示了一个 API 请求通过各个组件从互联网到傲空间服务的基本访问过程。
+
+```mermaid
+graph TD
+    Z[Clients] --> |API| A[Endpoint/Internet]
+    A -->|/space/| D[GT Server]
+    A --> |/share/| D
+    D --> |API| E>Box/NAT]:::boxBondary
+    classDef boxBondary fill:#f96;
+    E --> |API| Q[GT Client]
+    Q --> |API| X[Nginx]
+    X --> |/space/| F[Gateway]
+    X --> |/share/| G[AOFS]
+    F --> |file| G
+    G --> |put| I
+    F --> |get| I[Preview]
+    F --> |meta| J[Postgresql]
+    F --> |system| K[Agent]
+    F --> |message| L[Redis]
+```
+
 更多内容，请访问 [官网](https://ao.space/blog)。
 
 ## 源码仓库介绍
