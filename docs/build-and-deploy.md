@@ -20,6 +20,7 @@ It should be noted that the above process used the docker-compose.yml file in th
 
 If you want to replace some component images with locally built images, you can modify the image entry of the relevant components to the image address compiled by yourself and execute the `docker-compose up -d` command.
 
+
 ### Server build and deploy 
 
 #### Prepare Environment
@@ -119,7 +120,7 @@ local/space-agent:{tag}  # you can change {tag} to your own build tag
 
 you need to change {tag} to your own build tag
 
-### Clients build and run  @fuyu
+### Clients build and run  
 
 #### Android
 
@@ -147,7 +148,7 @@ Get the source code
 
 You can use the clone command
 
-  ```
+  ```text
   git clone https://github.com/ao-space/client-ios.git
   ```
 
@@ -173,7 +174,7 @@ you can find our newest published aospace-all-in-one image at [here](https://git
 
 if you want to deploy newest AOspace
 
-#### Prepare Environment
+#### Server Prepare Environment
 
 - docker (>=18.09)
 
