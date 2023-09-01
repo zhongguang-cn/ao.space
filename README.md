@@ -114,9 +114,9 @@ To deploy and run the project from a release version, or to build and run it fro
 
 ## Documentation
 
-- [Developer Documentation](https://ao.space/docs)
-- [User Manual](https://ao.space/support/help)
-- [Blog](https://ao.space/blog)
+- [Developer Documentation](https://ao.space/en/docs)
+- [User Manual](https://ao.space/en/support/help)
+- [Blog](https://ao.space/en/blog)
 - [API References](https://github.com/ao-space/api-doc)
 
 ## Contribution Guidelines
