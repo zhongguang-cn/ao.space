@@ -67,7 +67,7 @@ cd space-upgrade ; docker build -t local/space-upgrade:{tag} .
 - Linux
 
 ```shell
-DATADIR="$HOME/aospace"
+DATADIR="/mnt/aospace"
 sudo docker network create ao-space;
 sudo docker run -d --name aospace-all-in-one  \
         --restart always  \
@@ -104,6 +104,7 @@ docker run -d --name aospace-all-in-one \
 
 ```zsh
 docker network create ao-space
+HOME="/Users/User-Name-Here"
 DATADIR="$HOME/aospace"
 docker run -d --name aospace-all-in-one  \
         --restart always  \
