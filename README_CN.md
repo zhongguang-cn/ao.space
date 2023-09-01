@@ -90,7 +90,7 @@ graph TD
 - [platform-base](https://github.com/ao-space/platform-base)：为傲空间设备提供注册服务，以及协调和管理平台网络资源。
 - [gt](https://github.com/ao-space/gt)：提供通过中继转发的方式穿透 NAT 访问设备的网络支持服务。
 
-### 服务端(server)仓库介绍 @zhongguang
+### 服务端(server)仓库介绍
 
 服务器为傲空间主要数据载体，也是数据保护的核心，由如下仓库组成：
   
@@ -102,7 +102,7 @@ graph TD
 - [space-web](https://github.com/ao-space/space-web)：提供 web 端的服务资源及请求的 nginx 反向代理服务
 - [space-upgrade](https://github.com/ao-space/space-upgrade)：按需启动，主要负责server端的升级
 
-### 客户端（client）仓库介绍 @fuyu
+### 客户端（client）仓库介绍
 
 客户端支持Android、iOS、web版本，由如下仓库组成：
 
