@@ -26,7 +26,7 @@ The core of the AO.space, also known as the AO.space box, consists of sofeware, 
 - Databases:
   - SQL Instance (Postgresql): It provides data storage and management for relational databases within the space.
   - NoSQL Instance (Redis): It offers data storage and management for non-relational databases within the space, as well as messaging capabilities.
-- GT client: It's part of implementation for transfering network from internet to NAT office or home netrok. It also helps to establish P2P connections with the AO.space client.
+- GT client: It's part of implementation for transiting network from internet to NAT office or home netrok. It also helps to establish P2P connections with the AO.space client.
 - Applications: They are divided into three types: front-end mini programs, container services, and front-end and back-end hybrid applications. They are mainly used to expand the functionality of the AO.space services and are the key parts of the AO.space ecosystem. These official or third-party applications can be accessed through the AO.space Space user domain from internet, such as Card/CalDAV services.
 
 ### The Platform
