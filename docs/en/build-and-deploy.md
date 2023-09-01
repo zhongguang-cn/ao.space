@@ -1,6 +1,6 @@
 # build and deploy
 
-Englis | [简体中文](build-and-deploy_CN.md)
+Englis | [简体中文](../cn/build-and-deploy.md)
 
 ## Source code download
 

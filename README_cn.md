@@ -1,95 +1,64 @@
-# ao.space
+# AO.space
 
 [English](README.md) | 简体中文
 
 AO.space（傲空间）是一个以保护个人数据安全和隐私为核心的解决方案。通过端对端加密、基于设备认证等技术，确保用户完全掌控个人账号和数据。同时，采用平台透明转发、点对点加速、局域网直连等技术，让用户随时随地的极速访问个人数据。傲空间利用 PWA（Progressive Web App）和云原生技术，设计并打造前后端一体的应用生态。
 
-AO.space（傲空间）由服务端、客户端、平台三个部分组成。服务端和客户端只运行在个人设备上，使用公钥认证建立加密通信通道。服务端是傲空间管理保护用户数据的核心部分，目前支持 x86_64 和 aarch64 两个架构，可运行在个人服务器、个人计算机等设备上。客户端让用户在不同平台上快速安全的访问个人数据，目前支持多个平台，包括 Android、iOS 和 Web ，方便用户随时随地使用。
+AO.space（傲空间）由服务端、客户端、平台端三个部分组成。服务端和客户端只运行在个人设备上，使用公钥认证建立加密通信通道。服务端是傲空间管理保护用户数据的核心部分，目前支持 x86_64 和 aarch64 两个架构，可运行在个人服务器、个人计算机等设备上。客户端让用户在不同平台上快速安全的访问个人数据，目前支持 We吧、Android 和 iOS，方便用户随时随地使用。
 
 ## 系统整体架构
 
-傲空间系统由三个主要部分构成：服务器、平台和客户端。服务器内置于设备中（也称为傲空间盒子）。平台提供基础网络资源和相关管理。客户端包括 Web、iOS 和 Android。以下是这些组件的架构设计图。接下来我们将对每个组件提供更多的信息。
+傲空间系统由三个主要部分构成：服务端、客户端和平台端。服务端为个人空间的核心，部署于个人长期运行的并且联网的设备中，如个人服务器、个人计算机等。客户端为个人日常使用的电子设备，如手机、平板、个人电脑等，目前傲空间提供 Web、iOS 和 Android 等客户端。平台端在无法解析用户数据的前提下，为个人空间提供基础网络访问、安全防护等服务。以下是总体的架构设计草图和基础组件的详细信息。
 
-![AO.space-architecture](./assets/AO.space-architecture.svg)
+![AO.space-architecture](./assets/architecture.svg)
 
-### 服务器
+### 服务端
 
-服务器是傲空间的核心，也称为傲空间盒子，由软件、基本操作系统（如 EulixOS/openEuler 和其他 Linux 发行版）和硬件组成。在基本操作系统之上，通过容器化部署了与空间相关的服务和基本组件。它包括以下模块：
+服务端是傲空间的核心部分，一般部署在个人设备中，由空间软件、空间服务、容器运行时、基础操作系统（Linux 发行版、Windows、macOS）和硬件组成。在基础操作系统之上，以容器方式部署空间的服务和应用，包括以下模块：
 
-- Nginx：用于将流量引入傲空间的入口服务。
-- 代理（Agent）：作为客户端、平台和服务器之间的桥梁，适应操作系统。
-- 网关（Gateway）：负责 API 的路由、转发、端到端加密和解密、认证以及整体傲空间应用层请求的授权。
+- Web 服务（Nginx）：傲空间服务端的入口服务。
+- 代理（Agent）：既是空间基础服务的管理者，也是服务端、客户端与平台端之间沟通的桥梁，适应操作系统。
+- 网关（Gateway）：负责 API 的路由、转发、端到端加密和解密、认证以及整体空间应用层请求的授权。
 - AOFS：提供空间文件的存储和管理功能。它是一个虚拟文件系统，结合了对象存储和文件存储方法。
 - 预览（Preview）：负责为空间文件生成预览图。
 - 容器管理器（ContainerMgr）：用于与底层容器服务进行通信。
 - 数据库：
   - SQL 实例（Postgresql）：为空间内的关系型数据库提供数据存储和管理。
   - NoSQL 实例（Redis）：为空间内的非关系型数据库提供数据存储和管理，以及消息功能。
-- GT 客户端（GT cli）：是从互联网将网络流量传输到通常连接在 NAT 办公室或家庭网络中的傲空间设备的实现的一部分。它还有助于与傲空间客户端建立点对点（P2P）连接。
-- 傲空间应用：它被分为前端小程序、容器服务和前后端混合应用三种类型，其主要用于扩展傲空间服务功能，是傲空间应用生态的主要组成部分。这些官方或第三方应用程序可以通过傲空间用户域访问，例如 Card/CalDAV 服务。
-
-### 平台
-
-平台提供基本网络资源和相关管理能力。它包括以下组件：
-
-- 入口网关（Endpoint）：负责处理和分配傲空间生态系统内的整体流量。
-- 基础服务（BaseService）：提供傲空间设备注册服务，同时协调和管理平台网络资源（域名、转发代理等）。
-- GT 服务（GT server）：使我们能够将网络流量从互联网发送到通常连接在 NAT 办公室或家庭网络中的傲空间设备。此外，它还提- 供 STUN 服务，以使客户端能够通过基于 WebRTC 相关协议直接进行 NAT 穿透访问。
+- 网络客户端（Network client）：与平台端的网络转发服务建立安全通信通道，保证客户端与服务端在不同网络情况下的稳定通信。它还用于与客户端建立点对点（P2P）连接。当前基于 [GT](https://github.com/ao-space/gt) 实现。
+- 空间应用：空间支持前端应用、后端应用和前后端混合应用三种类型，用于扩展空间功能。这些官方或第三方应用程序可以通过傲空间用户域访问，例如 Card/CalDAV 服务。
 
 ### 客户端
 
-客户端充当整个系统的前端，使我们能够访问傲空间的所有功能。它包括 Web、iOS 和 Android 平台，提供以下关键模块：
+客户端是整个系统的前端，负责用户在不同的个人设备上与空间的交互，使用户能够随时随地访问空间的所有功能。目前提供 Web、iOS 和 Android 客户端，提供以下关键模块：
 
 - 端到端加密通道
 - 空间绑定
 - 文件
-- 相册
 - 设备
-- 我的分享
 - 家庭
-- 傲空间应用程序
-- 开发者选项
+- 空间应用
 - 安全
 
-下面图示了一个 API 请求通过各个组件从互联网到傲空间服务的基本访问过程。
+更多技术内容，请查看 [#文档](#文档)。
 
-```mermaid
-graph TD
-    Z[Clients] --> |API| A[Endpoint/Internet]
-    A -->|/space/| D[GT Server]
-    A --> |/share/| D
-    D --> |API| E>Box/NAT]:::boxBondary
-    classDef boxBondary fill:#f96;
-    E --> |API| Q[GT Client]
-    Q --> |API| X[Nginx]
-    X --> |/space/| F[Gateway]
-    X --> |/share/| G[AOFS]
-    F --> |file| G
-    F --> |preview| I[Preview]
-    F --> |meta| J[Postgresql]
-    F --> |system| K[Agent]
-    F --> |message| L[Redis]
-```
+### 平台端
 
-更多内容，请访问 [官网](https://ao.space/blog)。
+平台提供基本网络资源和相关管理能力。它包括以下组件：
+
+- 入口网关（Endpoint）：负责处理和分配空间生态系统内的整体流量。
+- 基础服务（BaseService）：提供空间设备注册服务，同时协调和管理平台网络资源（域名、转发代理等）。
+- 网络转发服务（Transit server）：提供网络流量转发服务，使用户能够在大多数情况安全的通过互联网网络访问在办公室或家庭网络中的空间服务端。当前基于 [GT](https://github.com/ao-space/gt) 实现。
 
 ## 源码仓库介绍
 
 项目整体包含三大部分 ：
 
-- 平台 [platform](./platform/)
 - 服务端 [server](./server/)
-- 客户端 [client](./client/) 。
+- 客户端 [client](./client/)
+- 平台端 [platform](./platform/)
 
-### 平台(platform)仓库介绍
-
-傲空间平台为个人设备提供透明通信通道服务和互联网访问的安全防护，由如下仓库组成：
-
-- [platform-proxy](https://github.com/ao-space/platform-proxy)：为傲空间用户域名流量提供高可用转发和横向扩容的支持。
-- [platform-base](https://github.com/ao-space/platform-base)：为傲空间设备提供注册服务，以及协调和管理平台网络资源。
-- [gt](https://github.com/ao-space/gt)：提供通过中继转发的方式穿透 NAT 访问设备的网络支持服务。
-
-### 服务端(server)仓库介绍
+### 服务端 Server 仓库介绍
 
 服务器为傲空间主要数据载体，也是数据保护的核心，由如下仓库组成：
   
@@ -101,40 +70,50 @@ graph TD
 - [space-web](https://github.com/ao-space/space-web)：提供 web 端的服务资源及请求的 nginx 反向代理服务
 - [space-upgrade](https://github.com/ao-space/space-upgrade)：按需启动，主要负责server端的升级
 
-### 客户端（client）仓库介绍
+### 客户端 Client 仓库介绍
 
-客户端支持Android、iOS、web版本，由如下仓库组成：
+客户端支持Android、iOS、Web 版本，由如下仓库组成：
 
 - [client-android](https://github.com/ao-space/client-android)：提供 Android 端的傲空间客户端
 - [client-ios](https://github.com/ao-space/client-ios)：提供 iOS 端的傲空间客户端
 - [space-web](https://github.com/ao-space/space-web)：部署在 server 上，提供 web 端的傲空间客户端
 
+### 平台端 Platform 仓库介绍
+
+傲空间平台为个人设备提供透明通信通道服务和互联网访问的安全防护，由如下仓库组成：
+
+- [platform-proxy](https://github.com/ao-space/platform-proxy)：为傲空间用户域名流量提供高可用转发和横向扩容的支持。
+- [platform-base](https://github.com/ao-space/platform-base)：为傲空间设备提供注册服务，以及协调和管理平台网络资源。
+- [GT](https://github.com/ao-space/gt)：提供通过中继转发的方式穿透 NAT 访问设备的网络支持服务。
+
 ## 构建和部署
 
-从发布版进行部署，或从源码构建并部署，请参考 [build-and-deploy](./docs/build-and-deploy_CN.md)
+可以使用发布的版本进行部署，也可以从源码编译构建并部署，请参考 [build-and-deploy](./docs/cn/build-and-deploy.md)。
 
 ## 文档
 
-[API 文档](https://github.com/ao-space/api-doc)
+- [开发文档](https://ao.space/documents)
+- [使用文档](https://ao.space/support/help)
+- [博客](https://ao.space/blog)
+- [API 参考文档](https://github.com/ao-space/api-doc)
+
+开发文档和使用文档的仓库为 [官网仓库](https://github.com/ao-space/website)，欢迎提交 PR。
 
 ## 贡献指南
 
 我们非常欢迎对本项目进行贡献。以下是一些指导原则和建议，希望能够帮助您参与到项目中来。
 
-[贡献指南](./docs/contribution-guidelines_CN.md)
+[贡献指南](./docs/cn/contribution-guidelines.md)
 
 ## 联系我们
 
 - 邮箱：<developer@ao.space>
-- [傲空间官网](https://ao.space)
+- [官方网站](https://ao.space)
 - [讨论组](https://slack.ao.space)
-- [Twitter](https://twitter.com/AOspaceOSC)
-
-您也可以查看傲空间提供的[帮助中心](https://ao.space/support/help)
 
 ## License
 
-AO.space 在 Apache License 2.0 下进行开源, 请查看 [LICENSE](./LICENSE)。以下子项目使用其它开源协议：
+AO.space 的主要仓库的开源协议采用 Apache License 2.0 协议, 有一个仓库保持与上游仓库的协议一致为 AGPL-3.0。协议详情请查看 [LICENSE](./LICENSE)。
 
 - [space-media-vod](https://github.com/ao-space/space-media-vod) -  AGPL-3.0 license
 
