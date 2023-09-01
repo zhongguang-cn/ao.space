@@ -6,11 +6,31 @@ AO.space is a solution that focuses on protecting personal data security and pri
 
 AO.space is composed of three parts: server-side, client-side, and platform. The server-side and client-side run on personal devices and establish encrypted communication channels with public key authentication. The server-side supports x86_64 and aarch64 architectures and can run on personal servers, computers, or other similar devices. The client-side supports Android, iOS, and web platforms, providing users with the convenience of using AO.space anywhere and anytime.
 
-## Architecture @haibo
+## Architecture
 
-- 系统架构介绍，以及主要工作方式。
+The AO.space system is composed of three main components: the server, the client, and the platform. The server is built into the device (also known as AO.space box). The client encompasses Web, iOS, Android platform. The platform offers fundamental network resources and relevant management. Below is a general architectural design diagram for these components. We will dive into each component and provide further details for them.
 
-更多内容，请访问 [官网](https://ao.space/blog)。
+
+![AO.space-architecture](./assets/AO.space-architecture.svg)
+
+### The Server
+
+The server is core of AO.space, also known as the AO.space box, consists of hardware capable of running a basic operating system (such as EulixOS/openEuler and other Linux distributions). On top of the basic operating system, various space-related services and essential components are deployed primarily using containerization. It comprises the following modules:
+
+- Nginx: The entry service for traffic into the AO.space.
+- Agent: It acts as a bridge between the client, platform, and server, adapting to the operating system.
+- Gateway: Responsible for API routing, forwarding, end-to-end encryption and decryption, authentication, and authorization of overal AO.space application-layer requests.
+- AOFS: It offers storage and management functionalities for space files. It is a virtual file system that combines object storage and file storage methods.
+- Preview: It's in charge of generating preview images for space files.
+- ContainerMgr: It is used to communicate with underlying container services.
+- Databases:
+  - SQL Instance (Postgresql): It provides data storage and management for relational databases within the space.
+  - NoSQL Instance (Redis): It offers data storage and management for non-relational databases within the space, as well as messaging capabilities.
+- Netwrokcli: It's part of implementation for transfering network from internet to NAT office or home netrok. It also helps to establish P2P connections with the AO.space client.
+- Applications: They are deployed within the box to extend service capabilities. These offical or third-party applications are accessible via AO.space user domains, such as the Card/CalDAV service.
+
+
+For more information, please visit the [official website](https://ao.space/blog).
 
 ## Source code repository introduction
 
