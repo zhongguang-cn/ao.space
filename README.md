@@ -8,7 +8,7 @@ AO.space is composed of three parts: server-side, client-side, and platform. The
 
 ## Architecture
 
-The AO.space system is composed of three main components: the server, the client, and the platform. The server is built into the device (also known as AO.space box). The client encompasses Web, iOS, Android platform. The platform offers fundamental network resources and relevant management. Below is a general architectural design diagram for these components. We will dive into each component and provide further details for them.
+The AO.space system is composed of three main components: the server, the platform, and the client. The server is built into the device (also known as AO.space box). The platform offers fundamental network resources and relevant management. The client includes Web, iOS, Android platforms. Below is a general architectural design diagram for these components. We will dive into each component and provide further details for them.
 
 
 ![AO.space-architecture](./assets/AO.space-architecture.svg)
@@ -26,9 +26,32 @@ The server is core of AO.space, also known as the AO.space box, consists of hard
 - Databases:
   - SQL Instance (Postgresql): It provides data storage and management for relational databases within the space.
   - NoSQL Instance (Redis): It offers data storage and management for non-relational databases within the space, as well as messaging capabilities.
-- Netwrokcli: It's part of implementation for transfering network from internet to NAT office or home netrok. It also helps to establish P2P connections with the AO.space client.
-- Applications: They are deployed within the box to extend service capabilities. These offical or third-party applications are accessible via AO.space user domains, such as the Card/CalDAV service.
+- GT cli: It's part of implementation for transfering network from internet to NAT office or home netrok. It also helps to establish P2P connections with the AO.space client.
+- Applications: They are deployed within the device to extend service capabilities. These offical or third-party applications are accessible via AO.space user domains, such as the Card/CalDAV service.
 
+### The Platform
+
+The platform offers essential network resources and associated management capabilities. It comprises the subsequent components:
+
+- Endpoint: It handles and dispatches the overall traffic within the AO.space ecosystem.
+- BaseService: It offers the AO.space device registration service, along with coordinating and managing platform network resources (domains, forwarding proxies, etc.).
+- GT server: It gives us the ability to send network traffic from internet to the AO.space device typically connected within a NAT office or home network. Additionally, it also supplies STUN services to enable to transit traffic through p2p channel using the WebRTC-based protocol.
+
+### The Client
+
+The client serves as the front-end of the entire system, granting us with access to all functionalities of the AO.space. It encompasses Web, iOS, Android platforms, providing the following key modules:
+
+- Network
+- End-to-End Encryption
+- Binding
+- Files
+- Albums
+- Devices
+- My Shares
+- Family
+- AO.space Application
+- Developer Options
+- Security
 
 For more information, please visit the [official website](https://ao.space/blog).
 
