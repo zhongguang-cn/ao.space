@@ -19,6 +19,9 @@
 [submodule "server/space-gateway"]
 	path = server/space-gateway
 	url = git@github.com:ao-space/space-gateway.git
+[submodule "server/space-upgrade"]
+	path = server/space-upgrade
+	url = git@github.com:ao-space/space-upgrade.git
 [submodule "client/client-android"]
 	path = client/client-android
 	url = git@github.com:ao-space/client-android.git
@@ -41,6 +44,4 @@
 	path = platform/platform-deploy
 	url = git@github.com:ao-space/platform-deploy.git
 
-[submodule "server/space-upgrade"]
-	path = server/space-upgrade
-	url = git@github.com:ao-space/space-upgrade.git
+
