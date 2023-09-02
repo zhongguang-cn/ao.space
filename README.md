@@ -107,7 +107,7 @@ Contributions to this project are very welcome. Here are some guidelines and sug
 
 - Email: <developer@ao.space>
 - Website：[https://ao.space](https://ao.space)
-- Discussion group：[slack.ao.space](https://slack.ao.space)
+- Discussion group：[https://slack.ao.space](https://slack.ao.space)
 
 ## License
 
