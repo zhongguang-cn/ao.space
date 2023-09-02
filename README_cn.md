@@ -107,10 +107,9 @@ AO.space（傲空间）由服务端、客户端、平台端三个部分组成。
 [贡献指南](./docs/cn/contribution-guidelines.md)
 
 ## 联系我们
-
 - 邮箱：<developer@ao.space>
-- [官方网站](https://ao.space)
-- [讨论组](https://slack.ao.space)
+- 官网：[https://ao.space](https://ao.space)
+- [slack 讨论组](https://slack.ao.space)
 
 ## License
 
