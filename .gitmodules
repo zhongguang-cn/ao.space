@@ -1,47 +1,45 @@
 [submodule "server/space-filepreview"]
-	path = server/space-filepreview
-	url = git@github.com:ao-space/space-filepreview.git
+        path = server/space-filepreview
+        url = https://github.com/ao-space/space-filepreview.git
 [submodule "server/space-media-vod"]
-	path = server/space-media-vod
-	url = git@github.com:ao-space/space-media-vod.git
+        path = server/space-media-vod
+        url = https://github.com/ao-space/space-media-vod.git
 [submodule "server/space-postgresql"]
-	path = server/space-postgresql
-	url = git@github.com:ao-space/space-postgresql.git
+        path = server/space-postgresql
+        url = https://github.com/ao-space/space-postgresql.git
 [submodule "server/space-aofs"]
-	path = server/space-aofs
-	url = git@github.com:ao-space/space-aofs.git
+        path = server/space-aofs
+        url = https://github.com/ao-space/space-aofs.git
 [submodule "server/space-web"]
-	path = server/space-web
-	url = git@github.com:ao-space/space-web.git
+        path = server/space-web
+        url = https://github.com/ao-space/space-web.git
 [submodule "server/space-agent"]
-	path = server/space-agent
-	url = git@github.com:ao-space/space-agent.git
+        path = server/space-agent
+        url = https://github.com/ao-space/space-agent.git
 [submodule "server/space-gateway"]
-	path = server/space-gateway
-	url = git@github.com:ao-space/space-gateway.git
+        path = server/space-gateway
+        url = https://github.com/ao-space/space-gateway.git
 [submodule "server/space-upgrade"]
-	path = server/space-upgrade
-	url = git@github.com:ao-space/space-upgrade.git
+        path = server/space-upgrade
+        url = https://github.com/ao-space/space-upgrade.git
 [submodule "client/client-android"]
-	path = client/client-android
-	url = git@github.com:ao-space/client-android.git
+        path = client/client-android
+        url = https://github.com/ao-space/client-android.git
 [submodule "client/client-ios"]
-	path = client/client-ios
-	url = git@github.com:ao-space/client-ios.git
+        path = client/client-ios
+        url = https://github.com/ao-space/client-ios.git
 [submodule "platform/platform-base"]
-	path = platform/platform-base
-	url = git@github.com:ao-space/platform-base.git
+        path = platform/platform-base
+        url = https://github.com/ao-space/platform-base.git
 [submodule "server/nginx-vod-module"]
-	path = server/nginx-vod-module
-	url = git@github.com:ao-space/nginx-vod-module.git
+        path = server/nginx-vod-module
+        url = https://github.com/ao-space/nginx-vod-module.git
 [submodule "platform/platform-proxy"]
-	path = platform/platform-proxy
-	url = git@github.com:ao-space/platform-proxy.git
+        path = platform/platform-proxy
+        url = https://github.com/ao-space/platform-proxy.git
 [submodule "platform/platform-nginx"]
-	path = platform/platform-nginx
-	url = git@github.com:ao-space/platform-nginx.git
+        path = platform/platform-nginx
+        url = https://github.com/ao-space/platform-nginx.git
 [submodule "platform/platform-deploy"]
-	path = platform/platform-deploy
-	url = git@github.com:ao-space/platform-deploy.git
-
-
+        path = platform/platform-deploy
+        url = https://github.com/ao-space/platform-deploy.git
