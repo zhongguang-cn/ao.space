@@ -8,7 +8,7 @@ AO.space is composed of three parts: server-side, client-side, and platform-side
 
 ## Architecture
 
-Below is an overview of the architectural design and detailed information about the core components: server-side, client-side, and platform-side. The server-side serves as the core of the personal space and is deployed on long-running, connected devices such as personal servers and personal computers. The client-side is used for everyday personal electronic devices, including smartphones, tablets, and personal computers. AO.space currently offers clients for Web, iOS, and Android. The platform-side provides network communication services without the capability to decipher user data.
+An architectural design overview is as below, along with detailed information about the core components, encompassing server-side, client-side, and platform-side. The server-side serves as the core of the personal space and is deployed on long-running, connected devices such as personal servers and personal computers. The client-side is used for everyday personal electronic devices, including smartphones, tablets, and personal computers. AO.space currently offers clients for Web, iOS, and Android. The platform-side provides network communication services without the capability to decipher user data.
 
 ![AO.space-architecture](./assets/architecture.png)
 
