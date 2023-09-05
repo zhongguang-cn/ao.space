@@ -96,7 +96,7 @@
 - [开发文档](https://ao.space/docs)
 - [使用文档](https://ao.space/support/help)
 - [博客](https://ao.space/blog)
-- [API 参考文档](https://github.com/ao-space/api-doc)
+- [API 参考文档](https://ao.space/docs/api/)
 
 开发文档和使用文档的仓库为 [官网仓库](https://github.com/ao-space/website)，欢迎提交 PR。
 
